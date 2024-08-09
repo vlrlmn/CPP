@@ -3,45 +3,73 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 13:30:55 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/08/07 15:01:00 by vlomakin         ###   ########.fr       */
+/*   Updated: 2024/08/09 18:23:16 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
+#include "Contact.hpp"
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
-
-class Contact
+Contact::Contact() 
 {
-	private:
-			std::string _firstName;
-			std::string _lastName;
-			std::string _nickName;
-			std::string _phoneNumber;
-			std::string _dark_secret;
-
-	public:
-		Contact();
-		~Contact(void);
-		Contact();
-		void setFirstName(void);
-		void setLastName(void);
-		void setNickName(void);
-		void setPhoneNumber(void);
-		void setDarkestSecret(void);
-
-		std::string getFirstName(void);
-		std::string getLastName(void);
-		std::string getNickname(void);
-		std::string getPhoneNumber(void);
-		std::string getDarkestSecret(void);
-		void printContact(void);
+	_firstName = "";
+	_lastName = "";
+	_nickName = "";
+	_phoneNumber = "";
+	_darkestSecret = "";
 };
 
-#endif
+Contact::Contact(std::string fName, std::string lName, std::string nName, std::string pNumber, std::string dSecret)
+{
+	_firstName = fName;
+	_lastName = lName;
+	_nickName = nName;
+	_phoneNumber = pNumber;
+	_darkestSecret = dSecret;
+}
+
+std::string Contact::getFirstName()
+{
+	return (_firstName);
+}
+
+std::string Contact::getLastName()
+{
+	return (_lastName);
+}
+
+std::string Contact::getNickName()
+{
+	return (_nickName);
+}
+std::string Contact::getPhoneNumber()
+{
+	return (_phoneNumber);
+}
+std::string Contact::getDarkestSecret()
+{
+	return (_darkestSecret);
+}
+void Contact::setFirstName(std::string firstName)
+{
+	_firstName = firstName;
+}
+void Contact::setLastName(std::string lastName)
+{
+	_lastName = lastName;
+}
+void Contact::setNickName(std::string nickName)
+{
+	_nickName = nickName;
+}
+void Contact::setPhoneNumber(std::string phoneNumber)
+{
+	_phoneNumber = phoneNumber;
+}
+
+void Contact::setDarkestSecret(std::string darkestSecret)
+{
+	_darkestSecret = darkestSecret;
+}

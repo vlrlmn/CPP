@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+         #
+#    By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/07 13:25:55 by vlomakin          #+#    #+#              #
-#    Updated: 2024/08/07 13:30:44 by vlomakin         ###   ########.fr        #
+#    Updated: 2024/08/08 13:32:09 by lomakinaval      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,17 @@ NAME = phonebook
 
 SRC = 	PhoneBook.cpp \
 		Contact.cpp \
+		main.cpp \
 
-CC = c++;
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ = $(SRC:.cpp=.o)
 
-$(NAME): $(OBJ) -o $(NAME)
+$(NAME): $(OBJ)
+		@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+		@rm -f $(OBJ)
 
 all: $(NAME)
 
