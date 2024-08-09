@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 13:14:19 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/09 16:52:40 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/09 21:12:31 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void printWelcomeMessage(void)
 {
+    std::cout << std::endl;
     std::cout << BOLD << WHITE << "*************************************************" << RESET << std::endl;
     std::cout << BOLD << WHITE << "*" << GREEN <<    "     Welcome to the PhoneBook application!     " << WHITE << "*" << RESET << std::endl;
     std::cout << BOLD << WHITE << "*  Please enter one of the following commands:  *" << RESET << std::endl;

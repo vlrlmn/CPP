@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 12:27:52 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/09 19:42:16 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/09 21:18:38 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int PhoneBook::getNumOfContacts()
 void PhoneBook::printContact(int index)
 {
 	Contact &userChoice = _contacts[index - 1];
-	std::cout << "First name: " << userChoice.getFirstName() << std::endl;
-	std::cout << "Last name: " << userChoice.getLastName() << std::endl;
-	std::cout << "Nick name: " << userChoice.getNickName() << std::endl;
-	std::cout << "Phone number: " << userChoice.getPhoneNumber() << std::endl;
-	std::cout << "Darkest secret: " << userChoice.getDarkestSecret() << std::endl;
+	std::cout << BOLD << "     First name:       " << userChoice.getFirstName() << RESET << std::endl;
+	std::cout << BOLD << "     Last name:        " << userChoice.getLastName() << RESET << std::endl;
+	std::cout << BOLD << "     Nick name:        " << userChoice.getNickName() << RESET << std::endl;
+	std::cout << BOLD << "     Phone number:     " << userChoice.getPhoneNumber() << RESET << std::endl;
+	std::cout << BOLD << "     Darkest secret:   " << userChoice.getDarkestSecret() << RESET << std::endl;
 }
 
 void PhoneBook::searchContact(PhoneBook   &newBook)
@@ -41,7 +41,7 @@ void PhoneBook::searchContact(PhoneBook   &newBook)
     newBook.printBook();
     while (true)
     {
-        std::cout << BOLD << "Chose the index of a desired phone contact:" << RESET << std::endl;
+        std::cout << BLUE << BOLD << "Chose the index of a desired phone contact:" << RESET << std::endl;
         std::cin >> index;
         if (std::cin.fail() || index < 1 || index > _numOfContacts)
         {
@@ -89,27 +89,58 @@ void	PhoneBook::addContact(Contact &newContact)
     }
 }
 
+bool PhoneBook::isValidName(const std::string &str)
+{
+    if (str.empty())
+        return (false);
+    for (size_t i = 0; i < str.length(); i++)
+    {
+        if (!std::isalpha(str[i]))
+            return (false);
+    }
+    return (true);
+}
+
+bool PhoneBook::isValidPhoneNumber(const std::string &str)
+{
+    if (str.empty())
+        return (false);
+    for (size_t i = 0; i < str.length(); i++)
+    {
+        if(!std::isdigit(str[i]))
+            return (false);
+    }
+    return (true);
+}
+
+bool PhoneBook::isValidNonEmpty(const std::string &str) 
+{
+    return (!str.empty());
+}
+
+std::string PhoneBook::getInput(const std::string &prompt, bool (*validate)(const std::string &))
+{
+    std::string input;
+    while(true)
+    {
+        std::cout << BOLD << prompt << RESET;
+        std::getline(std::cin, input);
+        if (validate(input))
+            break ;
+        else
+            std::cout << RED << BOLD "Invalid input, Please try again" << RESET << std::endl;
+    }
+    return (input);
+}
+
 void PhoneBook::createContact()
 {
-    
-    std::string firstName;
-    std::string lastName;
-    std::string nickName;
-    std::string phoneNumber;
-    std::string darkestSecret;
+    std::string firstName = getInput("Enter first name: ", PhoneBook::isValidName);
+    std::string lastName = getInput("Enter last name: ", PhoneBook::isValidName);
+    std::string nickName = getInput("Enter nick name: ", PhoneBook::isValidNonEmpty);
+    std::string phoneNumber = getInput("Enter phone number: ", PhoneBook::isValidPhoneNumber);
+    std::string darkestSecret = getInput("Enter darkest secret: ", PhoneBook::isValidNonEmpty);
 
-    std::cout << BOLD << BLUE << "Please put the following information:" << RESET << std::endl;
-    std::cout << BOLD << WHITE <<"Enter first name:" << RESET << std::endl;
-    std::getline(std::cin, firstName);
-    std::cout << BOLD << WHITE "Enter last name:" << RESET << std::endl;
-    std::getline(std::cin, lastName);
-    std::cout << BOLD << WHITE "Enter nick name:" << RESET << std::endl;
-    std::getline(std::cin, nickName);
-    std::cout << BOLD << WHITE "Enter phone number" << RESET << std::endl;
-    std::getline(std::cin, phoneNumber);
-    std::cout <<  BOLD << WHITE"Enter darkest secret" << RESET << std::endl;
-    std::getline(std::cin, darkestSecret);
-    
     Contact newContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
     addContact(newContact);
     std::cout << BLUE << BOLD << "New contact created!" << RESET << std::endl;
