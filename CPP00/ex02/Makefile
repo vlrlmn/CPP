@@ -6,13 +6,14 @@
 #    By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/09 21:33:33 by lomakinaval       #+#    #+#              #
-#    Updated: 2024/08/09 21:36:41 by lomakinaval      ###   ########.fr        #
+#    Updated: 2024/08/10 20:25:15 by lomakinaval      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Account
 
 SRC = Account.cpp \
+	  tests.cpp \
 
 CC = c++
 
