@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 21:36:45 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/10 20:29:45 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/11 20:54:08 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,25 +76,33 @@ int	Account::getNbWithdrawals( void )
 }
 void	Account::makeDeposit( int deposit )
 {
+    _displayTimestamp();
+	std::cout << " index:" << _accountIndex << ";p_amount:" << checkAmount() << ";deposit:" << deposit;
     _nbDeposits++;
     _amount += deposit;
     _totalNbDeposits++;
     _totalAmount += deposit;
+    std::cout << ";amount:" << _amount << ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
+    _displayTimestamp();
+    std::cout << " index:" << _accountIndex << ";p_amount:" << checkAmount() << ";withdrawal:";
     if (withdrawal > _amount)
     {
-        _displayTimestamp();
-
+        std::cout << "refused" << std::endl;
         return (false);
     }
-    _nbWithdrawals++;
-    _amount -= withdrawal;
-    _totalNbWithdrawals++;
-    _totalAmount -= withdrawal;
-    return (true);
+    else
+    {
+        _nbWithdrawals++;
+        _amount -= withdrawal;
+        _totalNbWithdrawals++;
+        _totalAmount -= withdrawal;
+        std::cout << withdrawal << ";amount:" << _amount << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
+        return (true);
+    }
 }
 
 int		Account::checkAmount( void ) const
@@ -105,7 +113,7 @@ int		Account::checkAmount( void ) const
 void	Account::displayStatus( void ) const
 {
     _displayTimestamp();
-    std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbDeposits << std::endl; 
+    std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl; 
 }
 
 void	Account::displayAccountsInfos( void )

@@ -6,10 +6,11 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 13:33:52 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/08/09 20:55:26 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/09 21:38:40 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 

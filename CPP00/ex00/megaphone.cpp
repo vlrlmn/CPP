@@ -6,13 +6,13 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 18:45:42 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/06 18:46:07 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/08 11:57:49 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include <cctype>
+// #include <cctype>
 
 int main(int argc, char **argv)
 {

@@ -6,10 +6,11 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 13:32:11 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/08/09 18:21:24 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/09 21:38:33 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
