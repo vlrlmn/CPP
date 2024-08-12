@@ -43,6 +43,11 @@ void PhoneBook::searchContact(PhoneBook   &newBook)
     {
         std::cout << BLUE << BOLD << "Chose the index of a desired phone contact:" << RESET << std::endl;
         std::cin >> index;
+        if (std::cin.eof())
+        {
+            std::cout << RED << BOLD "There was EOF met, book is being erased...Bye!" << RESET << std::endl;
+            exit(0) ;
+        }
         if (std::cin.fail() || index < 1 || index > _numOfContacts)
         {
             std::cin.clear();
@@ -56,7 +61,6 @@ void PhoneBook::searchContact(PhoneBook   &newBook)
             break ;
         }
     }
-
 }
 
 void PhoneBook::printBook()
@@ -77,7 +81,7 @@ void PhoneBook::printBook()
 
 void	PhoneBook::addContact(Contact &newContact)
 { 
-      static int oldestContactIndex = 0;
+    static int oldestContactIndex = 0;
     if (_numOfContacts < 8)
     {
         _contacts[_numOfContacts] = newContact;
@@ -125,13 +129,18 @@ std::string PhoneBook::getInput(const std::string &prompt, bool (*validate)(cons
     {
         std::cout << BOLD << prompt << RESET;
         std::getline(std::cin, input);
+        if (std::cin.eof())
+        {
+            std::cout << RED << BOLD "There was EOF met, book is being erased...Bye!" << RESET << std::endl;
+            exit(0) ;
+        }
         if (validate(input))
             break ;
         else
             std::cout << RED << BOLD "Invalid input, Please try again" << RESET << std::endl;
     }
     return (input);
-}
+    }
 
 void PhoneBook::createContact()
 {

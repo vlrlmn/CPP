@@ -18,6 +18,7 @@
 #include <string>
 #include <cstdlib>
 #include <iomanip>
+#include<limits>
 
 #define RESET       "\033[0m"
 #define BOLD        "\033[1m"

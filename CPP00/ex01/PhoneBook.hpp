@@ -38,7 +38,6 @@ class PhoneBook
         static bool isValidName(const std::string &str);
         static bool isValidPhoneNumber(const std::string &str);
         static bool isValidNonEmpty(const std::string &str);
-
 };
 
 #endif
