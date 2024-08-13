@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 13:33:52 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/08/09 21:38:40 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/13 11:15:22 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class PhoneBook
         
         int getNumOfContacts();
         void createContact();
-        void createContact(PhoneBook   &newBook);
         void addContact(Contact &newContact);
         void searchContact(PhoneBook   &newBook);
         void printBook();
