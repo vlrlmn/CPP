@@ -6,7 +6,7 @@
 #    By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/19 16:34:27 by lomakinaval       #+#    #+#              #
-#    Updated: 2024/08/19 18:37:47 by lomakinaval      ###   ########.fr        #
+#    Updated: 2024/08/19 18:40:47 by lomakinaval      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = harlfilter
 SRC =	main.cpp \
 		Harl.cpp \
 
-CC = c++;
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

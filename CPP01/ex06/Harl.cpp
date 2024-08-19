@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 16:42:09 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/19 18:38:58 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:44:05 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,6 @@ void Harl::filter(std::string level)
             this->error();
             break ;
         default:
-            std::cout << "No level log" << std::endl;
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     }
 }
