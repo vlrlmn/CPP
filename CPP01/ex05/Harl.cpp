@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 16:42:09 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/19 18:45:49 by lomakinaval      ###   ########.fr       */
+/*   Created: 2024/08/16 17:27:09 by lomakinaval       #+#    #+#             */
+/*   Updated: 2024/08/19 18:20:17 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HarlFilter.hpp"
+#include "Harl.hpp"
 
 void Harl::debug( void )
 {
@@ -32,7 +32,6 @@ void Harl::error( void )
     std::cout << "[ ERROR ]" << std::endl;
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
-
 
 void Harl::complain(std::string level)
 {
@@ -61,35 +60,4 @@ void Harl::complain(std::string level)
         }
    }
     std::cout << "UNKNOWN: " << level << std::endl;
-}
-
-void Harl::filter(std::string level)
-{
-    int levelIndex = -1;
-
-    std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
-    for(int i = 0; i < 4; i++)
-    {
-        if(levels[i] == level)
-        {
-            levelIndex = i;
-            break ;
-        }
-    }
-
-    switch(levelIndex)
-    {
-        case 0:
-            this->debug();
-        case 1:
-            this->info();
-        case 2:
-            this->warning();
-        case 3:
-            this->error();
-            break ;
-        default:
-            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-    }
 }

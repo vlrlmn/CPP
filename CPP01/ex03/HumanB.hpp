@@ -6,15 +6,15 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 19:03:40 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/14 20:46:53 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/15 14:35:04 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #pragma once
 
-#ifndef HUMAN_B_HPP
-#define HUMAN_B_HPP
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
 
 #include "Weapon.hpp"
 

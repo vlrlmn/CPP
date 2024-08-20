@@ -6,16 +6,14 @@
 #    By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/15 15:38:19 by lomakinaval       #+#    #+#              #
-#    Updated: 2024/08/15 15:39:07 by lomakinaval      ###   ########.fr        #
+#    Updated: 2024/08/16 17:22:54 by lomakinaval      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = replaceme
 
-SRC = 	PhoneBook.cpp \
-		Contact.cpp \
-		main.cpp \
+SRC = 	main.cpp
 
 CC = c++
 

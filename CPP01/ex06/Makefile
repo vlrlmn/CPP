@@ -6,11 +6,11 @@
 #    By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/19 16:34:27 by lomakinaval       #+#    #+#              #
-#    Updated: 2024/08/19 18:40:47 by lomakinaval      ###   ########.fr        #
+#    Updated: 2024/08/19 18:45:57 by lomakinaval      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlfilter
+NAME = harlFilter
 
 SRC =	main.cpp \
 		Harl.cpp \

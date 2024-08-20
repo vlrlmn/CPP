@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 18:46:31 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/14 20:47:01 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/15 14:38:20 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 #include <string>
 #include <iostream>
-#include "HumanA.hpp"
-#include "HumanB.hpp"
 
 class Weapon
 {

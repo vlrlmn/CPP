@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/13 18:25:48 by lomakinaval       #+#    #+#              #
-#    Updated: 2024/08/14 18:28:29 by lomakinaval      ###   ########.fr        #
+#    Created: 2024/08/16 17:26:46 by lomakinaval       #+#    #+#              #
+#    Updated: 2024/08/19 16:29:50 by lomakinaval      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombieHorde
+
+NAME = harl
 
 SRC = 	main.cpp \
-		Zombie.cpp \
-		zombieHorde.cpp \
+		Harl.cpp \
 
 CC = c++
 
@@ -23,16 +23,16 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@rm -f $(OBJ)
+		@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+		@rm -f $(OBJ)
 
 all: $(NAME)
 
 clean:
-	@rm -f $(OBJ)
+		@rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+		@rm -f $(NAME)
 
 re: fclean all
 
