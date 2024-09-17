@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 12:09:56 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/19 18:46:05 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/20 13:43:25 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int main()
 {
+    randomChump("Foo");
+    
     Zombie *heapZombie = newZombie("HeapZombie");
     heapZombie->announce();
     delete heapZombie;

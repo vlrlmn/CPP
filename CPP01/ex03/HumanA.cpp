@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 19:02:24 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/15 14:36:42 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/20 14:05:45 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

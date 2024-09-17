@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 12:47:36 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/14 18:28:19 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/20 14:33:22 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

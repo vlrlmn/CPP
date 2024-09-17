@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:26:03 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/13 18:39:38 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/20 13:59:45 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

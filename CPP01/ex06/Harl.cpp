@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 16:42:09 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/19 18:45:49 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/20 14:34:08 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

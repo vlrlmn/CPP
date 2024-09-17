@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:26:26 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/13 21:08:49 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/20 13:41:05 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

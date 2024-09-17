@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 12:09:39 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/20 13:28:26 by vlomakin         ###   ########.fr       */
+/*   Created: 2024/09/17 14:05:54 by vlomakin          #+#    #+#             */
+/*   Updated: 2024/09/17 17:27:12 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-Zombie::Zombie(std::string name) : name(name){}
+#include <iostream>
 
-void Zombie::announce()
-{
-    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+class Fixed {
+	private:
+		int FixedNum;
+		static const int FractBits;
 
-Zombie::~Zombie()
-{
-    std::cout << name << " is dead" << std::endl;
-}
+	public:
+		Fixed(int FixedNum);
+		Fixed(const Fixed &cp);
+		Fixed & operator=(const Fixed &);
+		~Fixed();
+	
+		int getRawBits( void ) const;
+		void setRawBits( int const raw );
+};
+
+#endif

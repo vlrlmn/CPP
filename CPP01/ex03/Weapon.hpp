@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 18:46:31 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/15 14:38:20 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/20 14:33:36 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

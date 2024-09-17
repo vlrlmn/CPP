@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 15:38:12 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/08/16 17:09:02 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/08/20 14:25:02 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <fstream>
 
-void replaceAndWrite(std::ifstream& inFile, std::ofstream& outFile, const std::string s1, const std::string s2) // why &
+void replaceAndWrite(std::ifstream& inFile, std::ofstream& outFile, const std::string s1, const std::string s2)
 {
     std::string line;
 
@@ -32,18 +32,13 @@ void replaceAndWrite(std::ifstream& inFile, std::ofstream& outFile, const std::s
     }
 }
 
-std::ofstream openOutFile(std::string fileName)
+bool openOutFile(std::string fileName, std::ofstream& outFile)
 {
-    std::ofstream outFile((fileName + ".replace").c_str());
-
-    if (!outFile.is_open())
-    {
-        std::cout << "Cannot create the output file!" << std::endl;
-    }
-    return (outFile);
+    outFile.open((fileName + ".replace").c_str());
+    return (outFile.is_open());
 }
 
-bool fileIsOpened(std::string& fileName) // why &
+bool fileIsOpened(std::string& fileName)
 {
     std::ifstream file(fileName.c_str());
     return (file.is_open());
@@ -63,7 +58,7 @@ int main(int argc,  char *argv[])
 
     if (s1.empty())
     {
-        std::cout << "String s1 cannot be empty!" << std::endl; //what will happen if s1 will be empty
+        std::cout << "String s1 cannot be empty!" << std::endl;
         return (3);
     }
     if (!fileIsOpened(fileName))
@@ -73,9 +68,9 @@ int main(int argc,  char *argv[])
     }
 
     std::ifstream inFile(fileName.c_str());
-    std::ofstream outFile = openOutFile(fileName);
+    std::ofstream outFile;
 
-    if (!outFile.is_open())
+    if (!openOutFile(fileName, outFile))
     {
         std::cout << "Cannot open a file!" << std::endl;
         return (2);

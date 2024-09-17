@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/15 15:38:19 by lomakinaval       #+#    #+#              #
-#    Updated: 2024/08/20 14:14:30 by vlomakin         ###   ########.fr        #
+#    Created: 2024/08/13 12:09:54 by lomakinaval       #+#    #+#              #
+#    Updated: 2024/09/17 14:05:28 by vlomakin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = zombie
 
-NAME = replaceme
-
-SRC = 	main.cpp
+SRC = 	main.cpp \
+		Fixed.cpp \
 
 CC = c++
 
@@ -22,18 +22,17 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)
-		@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-		@rm -f $(OBJ)
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@rm -f $(OBJ)
 
 all: $(NAME)
 
 clean:
-		@rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
-		@rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
-
