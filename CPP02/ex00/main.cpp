@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:05:36 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/09/18 16:35:24 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/09/18 16:42:09 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

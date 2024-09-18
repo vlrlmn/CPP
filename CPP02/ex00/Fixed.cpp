@@ -6,29 +6,28 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:05:49 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/09/18 16:28:40 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/09/18 17:04:06 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-const int Fixed::FractBits = 8;
 
 Fixed::Fixed() : FixedNum(0) 
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &original) : FixedNum(original.FixedNum) 
+Fixed::Fixed(const Fixed &original)
 {
 	std::cout << "Copy constructor called" << std::endl;
+    FixedNum = original.getRawBits();
 }
 
 Fixed& Fixed::operator=(const Fixed &original)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
     if (this != &original)
-        FixedNum = original.FixedNum;
+        this->FixedNum = original.getRawBits();
     return *this;
 }
 

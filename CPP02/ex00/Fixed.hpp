@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:05:54 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/09/18 15:57:55 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/09/18 16:50:09 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Fixed {
 	private:
 		int FixedNum;
-		static const int FractBits;
+		static const int FractBits = 8;
 
 	public:
 		Fixed();
