@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 16:29:27 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/09/30 19:18:30 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/02 17:19:54 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ScavTrap : public ClapTrap
 {
     public:
         ScavTrap();
-        ScavTrap(const std::string &name, unsigned int hitPoint = 100, unsigned int energyPoint = 50, unsigned int attackDamage = 20);
+        ScavTrap(const std::string &name);
         ScavTrap(const ScavTrap &other);
         ScavTrap& operator=(const ScavTrap &other);
         ~ScavTrap();

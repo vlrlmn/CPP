@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 17:19:52 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/09/30 13:02:31 by lomakinaval      ###   ########.fr       */
+/*   Created: 2024/10/02 16:28:39 by lomakinaval       #+#    #+#             */
+/*   Updated: 2024/10/02 17:15:39 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
 
-Point::Point() : x(0), y(0) {}
+# pragma once
 
-Point::Point(const float xVal, const float yVal) : x(xVal), y(yVal) {}
+#ifndef FRAG_TRAP_HPP
+#define FRAG_TRAP_HPP
 
-Point::Point(const Point &other) : x(other.x), y(other.y) {}
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-Point::~Point() {}
-
-Point &Point::operator=(const Point &other) 
+class FragTrap : public ClapTrap
 {
-    return *this;
-}
+    public:
+        FragTrap();
+        FragTrap(const std::string &name);
+        FragTrap(const FragTrap &other);
+        FragTrap& operator=(const FragTrap &other);
+        ~FragTrap();
 
-float  Point::getX() const 
-{
-    return x.toFloat();
-}
+        void highFivesGuys(void);
+};
 
-float Point::getY() const 
-{
-    return y.toFloat();
-}
-
+#endif

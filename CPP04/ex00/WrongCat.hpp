@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   WrongWrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 17:19:52 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/09/30 13:02:31 by lomakinaval      ###   ########.fr       */
+/*   Created: 2024/10/08 17:20:44 by lomakinaval       #+#    #+#             */
+/*   Updated: 2024/10/08 17:30:28 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "WrongAnimal.hpp"
 
-Point::Point() : x(0), y(0) {}
-
-Point::Point(const float xVal, const float yVal) : x(xVal), y(yVal) {}
-
-Point::Point(const Point &other) : x(other.x), y(other.y) {}
-
-Point::~Point() {}
-
-Point &Point::operator=(const Point &other) 
+class WrongCat : public WrongAnimal
 {
-    return *this;
-}
+	public:
+		WrongCat();
+		WrongCat(const std::string _type);
+		WrongCat(const WrongCat &original);
+		WrongCat & operator=(const WrongCat &original);
+		~WrongCat();
 
-float  Point::getX() const 
-{
-    return x.toFloat();
-}
-
-float Point::getY() const 
-{
-    return y.toFloat();
-}
-
+		void makeSound() const;
+		
+};

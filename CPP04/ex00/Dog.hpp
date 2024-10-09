@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 17:19:52 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/09/30 13:02:31 by lomakinaval      ###   ########.fr       */
+/*   Created: 2024/10/03 17:06:05 by lomakinaval       #+#    #+#             */
+/*   Updated: 2024/10/08 17:32:40 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
 
-Point::Point() : x(0), y(0) {}
+# pragma once
 
-Point::Point(const float xVal, const float yVal) : x(xVal), y(yVal) {}
+#ifndef DOG_HPP
+#define DOG_HPP
 
-Point::Point(const Point &other) : x(other.x), y(other.y) {}
+#include "Animal.hpp"
 
-Point::~Point() {}
-
-Point &Point::operator=(const Point &other) 
+class Dog : public Animal
 {
-    return *this;
-}
+	public:
+		Dog();
+		Dog(const std::string _type);
+		Dog(const Dog &original);
+		Dog & operator=(const Dog &original);
+		~Dog();
 
-float  Point::getX() const 
-{
-    return x.toFloat();
-}
+		void makeSound() const;
+};
 
-float Point::getY() const 
-{
-    return y.toFloat();
-}
-
+#endif
