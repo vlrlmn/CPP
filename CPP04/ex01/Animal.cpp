@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:45:24 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/08 17:29:17 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/11 12:47:03 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Animal::Animal()
 {
-    type = "Animal";
+    this->type = "Animal";
     std::cout << "Default constructor for Animal has been called" << std::endl;
 }
 
 Animal::Animal(std::string _type)
 {
-    if (!type.empty())
+    if (!_type.empty())
         this->type = _type;
     std::cout << "Parametrized constructor for Animal has been called" << std::endl;
 }
@@ -31,12 +31,12 @@ Animal::Animal(const Animal &original)
     std::cout << "Copy constructor for Animal has been called" << std::endl;
 }
 		
-Animal& Animal::operator=(const Animal &original)
+const Animal& Animal::operator=(const Animal &original)
 {
+    std::cout << "Copy assignment constructor for Animal has been called" << std::endl;
     if (this != &original)
     	this->type = original.type;
     return *this;
-    std::cout << "Copy assignment constructor for Animal has been called" << std::endl;
 }
 
 Animal::~Animal()
