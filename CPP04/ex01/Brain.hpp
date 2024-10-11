@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:39:25 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/10/09 16:03:27 by vlomakin         ###   ########.fr       */
+/*   Updated: 2024/10/11 12:38:29 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 
 class Brain 
 {
-	protected:
+	private:
 		std::string ideas[100];
 	public:
 		Brain();
 		Brain(const Brain &original);
-		Brain & operator=(const Brain &original);
-		virtual ~Brain();
+		const Brain & operator=(const Brain &original);
+		~Brain();
 };
 
 #endif
