@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 17:53:23 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/09 15:08:06 by vlomakin         ###   ########.fr       */
+/*   Created: 2024/10/03 17:06:05 by lomakinaval       #+#    #+#             */
+/*   Updated: 2024/10/09 16:00:19 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
 
-int main()
-{
-    Point a(0, 0);
-    Point b(10, 0);
-    Point c(5, 10);
-    Point p(5, 5);
+# pragma once
 
-    if (bsp(a, b, c, p))
-        std::cout << "The point is inside the triangle" << std::endl;
-    else
-        std::cout << "The point is outside the triangle" << std::endl;
-}
+#ifndef DOG_HPP
+#define DOG_HPP
+
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Dog : public Animal
+{	private:
+		Brain* dogBrain;
+	public:
+		Dog();
+		Dog(const std::string _type);
+		Dog(const Dog &original);
+		Dog & operator=(const Dog &original);
+		~Dog();
+
+		void makeSound() const;
+};
+
+#endif

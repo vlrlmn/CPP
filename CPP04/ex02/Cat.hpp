@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 14:05:54 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/10/09 14:05:03 by vlomakin         ###   ########.fr       */
+/*   Created: 2024/10/03 17:06:05 by lomakinaval       #+#    #+#             */
+/*   Updated: 2024/10/09 16:00:22 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 # pragma once
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include <iostream>
-#include <cmath>
-#include <ostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Fixed {
+class Cat : public Animal
+{
 	private:
-		int fixedNum;
-		static const int fractBits = 8;
-
+		Brain* catBrain;
 	public:
-		Fixed();
-		Fixed(const int intNum);
-		Fixed(const float floatNum);
-		Fixed(const Fixed &original);
-		Fixed & operator=(const Fixed &original);
-		~Fixed();
-	
-		float toFloat( void ) const;
-		int toInt( void ) const;
+		Cat();
+		Cat(const std::string _type);
+		Cat(const Cat &original);
+		Cat & operator=(const Cat &original);
+		~Cat();
+
+		void makeSound() const;
+		
 };
 
-std::ostream& operator<<(std::ostream& os, const Fixed& obj);
-	
 #endif

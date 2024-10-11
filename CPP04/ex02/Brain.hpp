@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 14:05:54 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/10/09 14:05:03 by vlomakin         ###   ########.fr       */
+/*   Created: 2024/10/09 15:39:25 by vlomakin          #+#    #+#             */
+/*   Updated: 2024/10/11 19:11:08 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # pragma once
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
-#include <cmath>
-#include <ostream>
 
-class Fixed {
-	private:
-		int fixedNum;
-		static const int fractBits = 8;
-
+class Brain
+{
+	protected:
+		std::string ideas[100];
 	public:
-		Fixed();
-		Fixed(const int intNum);
-		Fixed(const float floatNum);
-		Fixed(const Fixed &original);
-		Fixed & operator=(const Fixed &original);
-		~Fixed();
-	
-		float toFloat( void ) const;
-		int toInt( void ) const;
+		Brain();
+		Brain(const Brain &original);
+		Brain & operator=(const Brain &original);
+		virtual ~Brain();
 };
 
-std::ostream& operator<<(std::ostream& os, const Fixed& obj);
-	
 #endif

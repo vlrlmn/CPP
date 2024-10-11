@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:05:54 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/09/30 16:28:56 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/09 13:55:43 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

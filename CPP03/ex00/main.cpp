@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 13:12:53 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/09/30 16:26:44 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/11 18:58:43 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 int main() {
-    ClapTrap claptrap1("Clappy", 10, 10, 5);
-    ClapTrap claptrap2("Trappy", 15, 8, 3);
+    ClapTrap claptrap1("Clappy");
+    ClapTrap claptrap2("Trappy");
 
     std::cout << "\n--- Test Attack ---\n";
     claptrap1.attack("Trappy");

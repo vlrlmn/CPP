@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:05:49 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/09/18 18:51:58 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/09 14:25:58 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Fixed& Fixed::operator=(const Fixed &original)
 	std::cout << "Copy assignment operator called" << std::endl;
     if (this != &original)
     	this->fixedNum = original.fixedNum;
-    return *this;
+    return (*this);
 }
 
 Fixed::~Fixed()
