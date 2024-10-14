@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:41:00 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/12 18:55:39 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/14 14:23:31 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ScavTrap::ScavTrap() : ClapTrap("ScavTrap")
 {
-    std::cout << "SCAV TRAP Default constructor called" << std::endl;
+    std::cout << "ScavTrap Default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string &name, unsigned int hit, unsigned int energy, unsigned int attack) :

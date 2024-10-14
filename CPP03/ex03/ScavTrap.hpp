@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 16:29:27 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/12 18:52:44 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/14 15:24:58 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

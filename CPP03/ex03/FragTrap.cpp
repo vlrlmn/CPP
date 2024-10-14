@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:28:41 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/12 18:55:09 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/14 14:25:44 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

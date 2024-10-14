@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+         #
+#    By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/13 12:09:54 by lomakinaval       #+#    #+#              #
-#    Updated: 2024/10/12 18:30:32 by lomakinaval      ###   ########.fr        #
+#    Updated: 2024/10/14 14:23:21 by vlomakin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fragTrap
+NAME = diamondTrap
 
 SRC = 	main.cpp \
 		ClapTrap.cpp\

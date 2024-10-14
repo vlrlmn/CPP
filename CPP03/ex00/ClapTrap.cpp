@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 13:12:50 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/12 16:56:25 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/14 15:21:46 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-    std::cout << "Copy constructor called" << std::endl; // is it *this = other or attributes copying from other?
+    std::cout << "Copy constructor called" << std::endl;
     *this = other;
 }
 ClapTrap::~ClapTrap()

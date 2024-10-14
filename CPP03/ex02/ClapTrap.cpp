@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 13:12:50 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/12 17:44:30 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/14 15:23:32 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-    std::cout << "Copy constructor called" << std::endl; // is it *this = other or attributes copying from other?
+    std::cout << "Copy constructor called" << std::endl;
     *this = other;
 }
 ClapTrap::~ClapTrap()
@@ -67,7 +67,7 @@ void ClapTrap::attack(const std::string& className, const std::string& target)
     {
         std::cout << className << " " << this->name << " attacks " 
         << target << ", causing " << this->attackDamage
-        << " points of damage!" << std::endl; //why target isnt from this object
+        << " points of damage!" << std::endl;
         this->energyPoints--;
     }
     else
