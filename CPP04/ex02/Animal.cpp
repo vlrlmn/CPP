@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:45:24 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/08 17:29:17 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/14 16:36:33 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

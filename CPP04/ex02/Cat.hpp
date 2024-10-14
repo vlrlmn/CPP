@@ -6,7 +6,7 @@
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:06:05 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/09 16:00:22 by vlomakin         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:35:37 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ class Cat : public Animal
 		Brain* catBrain;
 	public:
 		Cat();
-		Cat(const std::string _type);
 		Cat(const Cat &original);
 		Cat & operator=(const Cat &original);
 		~Cat();
 
 		void makeSound() const;
+		Brain *getBrain(void) const;
 		
 };
 

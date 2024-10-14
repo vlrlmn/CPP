@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+         #
+#    By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/27 16:51:09 by lomakinaval       #+#    #+#              #
-#    Updated: 2024/10/08 17:33:36 by lomakinaval      ###   ########.fr        #
+#    Updated: 2024/10/14 16:37:08 by vlomakin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,7 @@ SRC = 	main.cpp \
 		Cat.cpp \
 		Dog.cpp \
 		Animal.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp \
+		Brain.cpp \
 
 CC = c++
 
