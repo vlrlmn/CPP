@@ -23,8 +23,8 @@ DiamondTrap::DiamondTrap(const std::string _name) :
     FragTrap(_name), ScavTrap(_name),
     name(_name)
 {
-    std::cout << this->hitPoints << " " 
-    << this->energyPoints << " " << this->attackDamage 
+    std::cout << "DiamondTrap points. HitPoints: " << this->hitPoints << ". EnergyPoints: " 
+    << this->energyPoints << ". AttackDamage: " << this->attackDamage 
     << std::endl;
 
     std::cout << "DiamondTrap parametrized constructor for " << this->name << std::endl;

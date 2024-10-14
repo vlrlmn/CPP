@@ -16,7 +16,8 @@
 #include "DiamondTrap.hpp"
 
 int main() {
-    std::cout << "\n--- Testing ClapTrap ---\n";
+
+    std::cout << "\n--- Testing ClapTrap ---" << std::endl;
     ClapTrap clap1("ClapOne");
     ClapTrap clap2("ClapTwo");
 
@@ -29,7 +30,7 @@ int main() {
     ClapTrap clap4;
     clap4 = clap2;
 
-    std::cout << "\n--- Testing FragTrap ---\n";
+    std::cout << "\n--- Testing FragTrap ---" << std::endl;
     FragTrap frag1("FragOne");
     frag1.attack("EnemyTwo");
     frag1.highFivesGuys();
@@ -38,7 +39,7 @@ int main() {
     FragTrap frag3;
     frag3 = frag2;
 
-    std::cout << "\n--- Testing ScavTrap ---\n";
+    std::cout << "\n--- Testing ScavTrap ---" << std::endl;
     ScavTrap scav1("ScavOne");
     scav1.attack("EnemyThree");
     scav1.guardGate();
@@ -47,8 +48,9 @@ int main() {
     ScavTrap scav3;
     scav3 = scav1;
 
-    std::cout << "\n--- Testing DiamondTrap ---\n";
+    std::cout << "\n--- Testing DiamondTrap ---"  << std::endl;
     DiamondTrap diamond1("DiamondOne");
+
     diamond1.takeDamage(0);
     diamond1.beRepaired(0);
     diamond1.attack("EnemyFour");
@@ -60,6 +62,6 @@ int main() {
     DiamondTrap diamond3;
     diamond3 = diamond2;
 
-    std::cout << "\n--- End of Tests ---\n";
+    std::cout << "\n--- End of Tests ---" << std::endl;
     return 0;
 }

@@ -15,6 +15,7 @@
 
 int main() 
 {
+    std::cout << "\n--- Testing ClapTrap ---" << std::endl;
     ClapTrap clap("ClapBot");
     clap.attack("target1");
     clap.takeDamage(3);
@@ -22,12 +23,14 @@ int main()
 
     std::cout << std::endl;
 
+    std::cout << "\n--- Testing ScavTrap ---" << std::endl;
     ScavTrap scav("ScavBot");
     scav.attack("target2");
     scav.guardGate();
 
     std::cout << std::endl;
 
+    std::cout << "\n--- Testing FragTrap ---" << std::endl;
     FragTrap frag("FragBot");
     frag.attack("target3");
     frag.highFivesGuys();
@@ -39,9 +42,11 @@ int main()
 
     std::cout << std::endl;
 
+    std::cout << "\n--- Testing ScavTrap ---" << std::endl;
     ScavTrap scav2;
     scav2 = scav;
     scav2.attack("target4");
 
+    std::cout << "\n--- End of Tests ---" << std::endl;
     return 0;
 }

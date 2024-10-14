@@ -13,25 +13,25 @@
 #include "ScavTrap.hpp"
 
 int main() {
-    std::cout << "\n--- Test 1: Default Constructor ---\n";
+    std::cout << "\n--- Test 1: Default Constructor ---" << std::endl;
     ScavTrap scav1;
 
-    std::cout << "\n--- Test 2: Parameterized Constructor ---\n";
+    std::cout << "\n--- Test 2: Parameterized Constructor ---" << std::endl;
     ScavTrap scav2("Scavy");
 
-    std::cout << "\n--- Test 3: Copy Constructor ---\n";
+    std::cout << "\n--- Test 3: Copy Constructor ---" << std::endl;
     ScavTrap scav3(scav2);
 
-    std::cout << "\n--- Test 4: Copy Assignment Operator ---\n";
+    std::cout << "\n--- Test 4: Copy Assignment Operator ---" << std::endl;
     ScavTrap scav4;
     scav4 = scav1;
 
-    std::cout << "\n--- Test 5: Attack Function ---\n";
+    std::cout << "\n--- Test 5: Attack Function ---" << std::endl;
     scav2.attack("enemy");
 
-    std::cout << "\n--- Test 6: GuardGate Function ---\n";
+    std::cout << "\n--- Test 6: GuardGate Function ---" << std::endl;
     scav2.guardGate();
 
-    std::cout << "\n--- End of Tests ---\n";
+    std::cout << "\n--- End of Tests ---" << std::endl;
     return 0;
 }
