@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 17:06:05 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/23 16:19:33 by lomakinaval      ###   ########.fr       */
+/*   Created: 2024/10/23 17:06:35 by lomakinaval       #+#    #+#             */
+/*   Updated: 2024/10/23 17:09:12 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-# pragma once
+#pragma once
+#ifndef ICE_HPP
+# define ICE_HPP
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class Cat : public AAnimal
+class Ice : public AMateria
 {
-	private:
-		Brain* catBrain;
-	public:
-		Cat();
-		Cat(const Cat &original);
-		Cat & operator=(const Cat &original);
-		~Cat();
 
-		void makeSound() const;
-		Brain *getBrain(void) const;
-		
+public:
+	Ice();
+	Ice(const std::string &type);
+	Ice(const Ice &other);
+	Ice	&operator=(const Ice &other);
+	~Ice();
+
+	AMateria	*clone() const;
+	void		use(ICharacter &target);
+
+
 };
 
-#endif
+#endif /* ICE_HPP */

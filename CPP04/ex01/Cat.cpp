@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:39:25 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/23 15:09:08 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/23 16:21:14 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ Cat& Cat::operator=(const Cat &original)
     if (this != &original)
     {
         Animal::operator=(original);
-    	*this->catBrain = *original.catBrain;
+        delete this->catBrain;
+    	this->catBrain = new Brain(*original.catBrain);
     }
     std::cout << "Copy assignment constructor for Cat has been called" << std::endl;
     return (*this);

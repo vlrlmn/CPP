@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:03:49 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/14 16:49:03 by vlomakin         ###   ########.fr       */
+/*   Updated: 2024/10/23 16:47:31 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 void subjectTest()
 {
 	std::cout << "----------------- mandatory test -----------------\n";
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
 
 	j->makeSound();
 	i->makeSound();
@@ -30,7 +30,7 @@ void arrayTest()
 {
 	std::cout << "----------------- array test -----------------\n";
 	int animalAmount = 10;
-	Animal *arr[animalAmount];
+	AAnimal *arr[animalAmount];
 	for (int i = 0; i < animalAmount; i++)
 	{
 		std::cout << i << ":\t";
@@ -46,7 +46,7 @@ void arrayTest()
 		std::cout << i << ":\t";
 		delete arr[i];
 	}
-	std::cout << "----------------- array delited -----------------\n";
+	std::cout << "----------------- array deleted -----------------\n";
 	
 }
 
@@ -56,10 +56,12 @@ void deepCopyTest()
 	
 	Dog basic;
 	{
-		Dog tmp = basic;
+		Dog tmp = basic; // seg fault
+		std::cout << "HERE" << std::endl;
 		std::cout << "\ttmp    :" << tmp.getBrain() << std::endl;
 		std::cout << "\tbasic1 :" << basic.getBrain() << std::endl;
 	}
+	std::cout << "HERE" << std::endl;
 	std::cout << "\tbasic2  :" << basic.getBrain() << std::endl;
 
 }

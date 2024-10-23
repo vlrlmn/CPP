@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:45:30 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/10/23 15:28:02 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/23 16:11:26 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,15 @@ const Brain & Brain::operator=(const Brain &original)
 std::string& Brain::getIdea(int index)
 {
 	if (index >= 0 && index <= 100)
+	{
+		if (ideas[index].empty())
+		{
+			std::cout << "This brain is empty!" << std::endl;
+		}
 		return (ideas[index]);
-	static std::string empty = "";
-	return (empty);
+	}
+	static std::string outOfBounds = "Index is out of bounds";
+	return (outOfBounds);
 }
 
 Brain::~Brain()

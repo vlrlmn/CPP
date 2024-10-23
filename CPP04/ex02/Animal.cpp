@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:45:24 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/14 16:36:33 by vlomakin         ###   ########.fr       */
+/*   Updated: 2024/10/23 16:19:01 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal()
+AAnimal::AAnimal()
 {
     type = "Animal";
     std::cout << "Default constructor for Animal has been called" << std::endl;
 }
 
-Animal::Animal(std::string _type)
+AAnimal::AAnimal(std::string _type)
 {
     if (!type.empty())
         this->type = _type;
     std::cout << "Parametrized constructor for Animal has been called" << std::endl;
 }
 
-Animal::Animal(const Animal &original)
+AAnimal::AAnimal(const AAnimal &original)
 {
     *this = original;
     std::cout << "Copy constructor for Animal has been called" << std::endl;
 }
 		
-Animal& Animal::operator=(const Animal &original)
+AAnimal& AAnimal::operator=(const AAnimal &original)
 {
     if (this != &original)
     	this->type = original.type;
@@ -39,18 +39,18 @@ Animal& Animal::operator=(const Animal &original)
     std::cout << "Copy assignment constructor for Animal has been called" << std::endl;
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
     std::cout << "Destructor for Animal has been called" << std::endl;
 }
 
-std::string Animal::getType(void) const
+std::string AAnimal::getType(void) const
 {
     std::cout << "Animal getType() function was called. The type is " << this->type << std::endl;
     return (this->type);
 }
 
-void Animal::makeSound() const
+void AAnimal::makeSound() const
 {
     std::cout << "Animal was triggered and it makes sound" << std::endl;
 }

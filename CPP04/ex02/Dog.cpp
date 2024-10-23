@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:44:12 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/14 16:41:11 by vlomakin         ###   ########.fr       */
+/*   Updated: 2024/10/23 16:49:25 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal()
+Dog::Dog() : AAnimal()
 {
     this->type = "Dog";
     this->dogBrain = new Brain();
     std::cout << "Default constructor for Dog has been called" << std::endl;
 }
 
-Dog::Dog(const Dog &original) : Animal(original)
+Dog::Dog(const Dog &original) : AAnimal(original)
 {
     std::cout << "Copy constructor for Dog has been called" << std::endl;
     if (this != &original)
@@ -34,10 +34,11 @@ Dog& Dog::operator=(const Dog &original)
     std::cout << "Copy assignment constructor for Dog has been called" << std::endl;
     if (this != &original)
     {
-        Animal::operator=(original);
-    	*this->dogBrain = *original.dogBrain;
+        AAnimal::operator=(original);
+        delete this->dogBrain;
+    	this->dogBrain = new Brain(*original.dogBrain);
     }
-    return *this;
+	return (*this);
 }
 
 Dog::~Dog()

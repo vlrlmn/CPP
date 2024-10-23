@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:06:05 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/14 16:34:13 by vlomakin         ###   ########.fr       */
+/*   Updated: 2024/10/23 16:59:31 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 
 #include <iostream>
 
-class Animal {
+class AAnimal {
 	protected:
 		std::string type;
 	public:
-		Animal();
-		Animal(std::string _type);
-		Animal(const Animal &original);
-		Animal & operator=(const Animal &original);
-		virtual ~Animal();
+		AAnimal();
+		AAnimal(std::string _type);
+		AAnimal(const AAnimal &original);
+		AAnimal & operator=(const AAnimal &original);
+		virtual ~AAnimal();
 
         virtual void makeSound() const = 0;
 		std::string getType(void) const;

@@ -6,17 +6,14 @@
 #    By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/27 16:51:09 by lomakinaval       #+#    #+#              #
-#    Updated: 2024/10/23 17:00:03 by lomakinaval      ###   ########.fr        #
+#    Updated: 2024/10/23 17:00:46 by lomakinaval      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animal
+NAME = interface
 
 SRC = 	main.cpp \
-		Cat.cpp \
-		Dog.cpp \
-		Animal.cpp \
-		Brain.cpp \
+		AMateria.cpp \
 
 CC = c++
 

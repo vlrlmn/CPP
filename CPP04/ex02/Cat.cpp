@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:39:25 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/14 16:35:29 by vlomakin         ###   ########.fr       */
+/*   Updated: 2024/10/23 16:33:29 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : AAnimal()
 {
     this->type = "Cat";
     this->catBrain = new Brain();
     std::cout << "Default constructor for Cat has been called" << std::endl;
 }
 
-Cat::Cat(const Cat &original) : Animal(original)
+Cat::Cat(const Cat &original) : AAnimal(original)
 {
     std::cout << "Copy constructor for Cat has been called" << std::endl;
     if (this != &original)
@@ -33,8 +33,9 @@ Cat& Cat::operator=(const Cat &original)
 {
     if (this != &original)
     {
-        Animal::operator=(original);
-    	*this->catBrain = *original.catBrain;
+        AAnimal::operator=(original);
+        delete this->catBrain;
+    	this->catBrain = new Brain(*original.catBrain);
     }
     std::cout << "Copy assignment constructor for Cat has been called" << std::endl;
     return *this;

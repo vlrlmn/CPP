@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:03:49 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/23 15:29:16 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/23 16:10:00 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,16 @@ void assignmentTest()
 	Dog dog1;
 	Dog dog2;
 	dog2 = dog1;
+
+	dog1.getBrain()->getIdea(0) = "Chase the ball";
+	dog2.getBrain()->getIdea(0) = "Be a good boy";
+	
 	std::cout << "dog1 Brain: " << dog1.getBrain() << std::endl;
 	std::cout << "dog2 Brain: " << dog2.getBrain() << std::endl;
+
+	std::cout << "dog1 brain idea: " << dog1.getBrain()->getIdea(0) << std::endl;
+	std::cout << "dog2 brain idea: " << dog2.getBrain()->getIdea(0) << std::endl;
+
 }
 
 void brainIdeasTest()
@@ -81,7 +89,7 @@ void brainIdeasTest()
 	dog1.getBrain()->getIdea(0) = "Chase the ball";
 	dog2.getBrain()->getIdea(0) = "Be a good boy";
 
-	std::cout << "dog1 brain idea: " << dog1.getBrain()->getIdea(0) << std::endl;
+	std::cout << "dog1 brain idea: " << dog1.getBrain()->getIdea(10) << std::endl;
 	std::cout << "dog2 brain idea: " << dog2.getBrain()->getIdea(0) << std::endl;
 }
 

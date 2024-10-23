@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 17:06:05 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/23 16:19:33 by lomakinaval      ###   ########.fr       */
+/*   Created: 2024/10/23 17:07:39 by lomakinaval       #+#    #+#             */
+/*   Updated: 2024/10/23 17:09:04 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-# pragma once
+#pragma once
+#ifndef CURE_HPP
+# define CURE_HPP
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Cat : public AAnimal
+class Cure : public AMateria
 {
-	private:
-		Brain* catBrain;
-	public:
-		Cat();
-		Cat(const Cat &original);
-		Cat & operator=(const Cat &original);
-		~Cat();
 
-		void makeSound() const;
-		Brain *getBrain(void) const;
-		
+public:
+	Cure();
+	Cure(const std::string &type);
+	Cure(const Cure &other);
+	Cure	&operator=(const Cure &other);
+	~Cure();
+
+	AMateria	*clone() const;
+	void		use(ICharacter &target);
 };
 
-#endif
+#endif /* CURE_HPP */

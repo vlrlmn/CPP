@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:44:12 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/23 15:08:25 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/23 15:45:57 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ Dog& Dog::operator=(const Dog &original)
     if (this != &original)
     {
         Animal::operator=(original);
-    	*this->dogBrain = *original.dogBrain;
+        delete this->dogBrain;
+    	this->dogBrain = new Brain(*original.dogBrain);
     }
     return *this;
 }
