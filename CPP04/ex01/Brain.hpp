@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:39:25 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/10/11 12:38:29 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/23 15:26:18 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class Brain
 		Brain(const Brain &original);
 		const Brain & operator=(const Brain &original);
 		~Brain();
+
+		std::string& getIdea(int index);
 };
 
 #endif

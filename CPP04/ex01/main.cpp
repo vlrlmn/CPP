@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:03:49 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/11 12:06:51 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/23 15:29:16 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void subjectTest()
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
-	delete j; //should not create a leak
+	delete j;
 	delete i;
 }
 
@@ -62,6 +62,29 @@ void deepCopyTest()
 
 }
 
+void assignmentTest()
+{
+	std::cout << "---------------- assignment test ----------------\n";
+	Dog dog1;
+	Dog dog2;
+	dog2 = dog1;
+	std::cout << "dog1 Brain: " << dog1.getBrain() << std::endl;
+	std::cout << "dog2 Brain: " << dog2.getBrain() << std::endl;
+}
+
+void brainIdeasTest()
+{
+	std::cout << "----------------- brain ideas test ----------------\n";
+	Dog dog1;
+	Dog dog2 = dog1;
+
+	dog1.getBrain()->getIdea(0) = "Chase the ball";
+	dog2.getBrain()->getIdea(0) = "Be a good boy";
+
+	std::cout << "dog1 brain idea: " << dog1.getBrain()->getIdea(0) << std::endl;
+	std::cout << "dog2 brain idea: " << dog2.getBrain()->getIdea(0) << std::endl;
+}
+
 void deleteTest()
 {
 	const Cat *cat2 = new Cat();
@@ -73,6 +96,8 @@ int main (void)
 	subjectTest();
 	arrayTest();
 	deepCopyTest();
+	assignmentTest();
+	brainIdeasTest();
 	deleteTest();
 	std::cout << "-----------------------------------------------------" << std::endl;
 }

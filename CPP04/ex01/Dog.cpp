@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:44:12 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/11 12:44:07 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/23 15:08:25 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,7 @@ Dog::Dog() : Animal()
 Dog::Dog(const Dog &original) : Animal(original)
 {
     std::cout << "Copy constructor for Dog has been called" << std::endl;
-    if (this != &original)
-    {
-        this->dogBrain = new Brain();
-        *this->dogBrain = *original.dogBrain;
-    }
+    this->dogBrain = new Brain(*original.dogBrain);
 }
 		
 Dog& Dog::operator=(const Dog &original)
@@ -43,7 +39,7 @@ Dog& Dog::operator=(const Dog &original)
 Dog::~Dog()
 {
     std::cout << "Destructor for Dog has been called" << std::endl;
-    delete dogBrain;
+    delete (dogBrain);
 }
 
 void Dog::makeSound() const
