@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 17:01:16 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/23 17:09:02 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/24 16:21:57 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ public:
     std::string const & getType() const; //Returns the materia type
     virtual AMateria* clone() const = 0;
     virtual void use(ICharacter& target);
-}
+};
 
 #endif

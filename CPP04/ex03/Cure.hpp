@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 17:07:39 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/23 17:09:04 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/24 16:31:51 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
-
 
 class Cure : public AMateria
 {
