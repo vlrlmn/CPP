@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:45:30 by vlomakin          #+#    #+#             */
-/*   Updated: 2024/10/14 16:47:04 by vlomakin         ###   ########.fr       */
+/*   Updated: 2024/10/24 16:07:17 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Brain::Brain(const Brain &original)
 
 Brain & Brain::operator=(const Brain &original)
 {
-	*this = original;
 	std::cout << "Brain copy assignment constructor called" << std::endl;
 	if (this != &original)
 	{
