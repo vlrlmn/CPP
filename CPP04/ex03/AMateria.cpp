@@ -6,11 +6,9 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 17:01:18 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/24 16:22:09 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/25 12:08:55 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "AMateria.hpp"
 
 #include "AMateria.hpp"
 

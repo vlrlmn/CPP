@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:24:16 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/24 16:27:22 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/25 13:09:37 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Ice	&Ice::operator=(const Ice &other)
 	return (*this);
 }
 
-Ice::~Ice() { }
+Ice::~Ice() {}
 
 AMateria	*Ice::clone() const
 {

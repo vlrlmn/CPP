@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:31:01 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/24 16:31:04 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/25 13:22:32 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ private:
 	Node	*rear;
 public:
 	Queue();
-	~Queue();
+	virtual ~Queue();
 	void	enqueue(void *val);
 	void	*dequeue(void);
 	void	*queueFront();
@@ -45,4 +45,4 @@ public:
 };
 
 
-#endif // !QUEUE_HPP
+#endif

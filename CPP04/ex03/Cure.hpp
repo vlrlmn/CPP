@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 17:07:39 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/24 16:31:51 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/25 12:12:13 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	Cure(const std::string &type);
 	Cure(const Cure &other);
 	Cure	&operator=(const Cure &other);
-	~Cure();
+	virtual ~Cure();
 
 	AMateria	*clone() const;
 	void		use(ICharacter &target);

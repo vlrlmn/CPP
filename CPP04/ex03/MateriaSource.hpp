@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:30:13 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/24 16:30:16 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/25 13:22:27 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 	MateriaSource();
 	MateriaSource(const MateriaSource &other);
 	MateriaSource	&operator=(const MateriaSource &other);
-	~MateriaSource();
+	virtual ~MateriaSource();
 
 	void		learnMateria(AMateria *m);
 	AMateria	*createMateria(const std::string &type);
@@ -38,4 +38,4 @@ public:
 
 };
 
-#endif /* MATERIASOURCE_HPP */
+#endif

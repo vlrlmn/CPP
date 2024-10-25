@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:30:25 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/24 16:30:35 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/25 12:57:03 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ MateriaSource::~MateriaSource()
 void	MateriaSource::learnMateria(AMateria *m)
 {
 	if (numLearnedMaterias >= 4)
-		return;
+		return ;
 	for (int i = 0; i < 4; i++)
 	{
 		if (learnedMaterias[i] == NULL)

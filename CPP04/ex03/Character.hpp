@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:32:38 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/24 16:32:41 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/25 12:12:19 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	Character(const std::string &name);
 	Character(const Character &other);
 	Character	&operator=(const Character &other);
-	~Character();
+	virtual ~Character();
 
 	const std::string	&getName() const;
 
