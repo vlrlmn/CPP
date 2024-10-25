@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:32:51 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/24 16:33:16 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/25 16:40:50 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ const std::string	&Character::getName() const
 
 void	Character::equip(AMateria *m)
 {
+    if (m == NULL)
+        return ;
 	for (int i = 0; i < 4; i++)
 	{
 		if (inventory[i] == NULL)

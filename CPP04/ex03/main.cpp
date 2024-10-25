@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 17:05:47 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/25 13:21:03 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/25 16:37:02 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,9 @@ int main()
 	me->equip(tmp);
 	delete tmp;
 	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	delete tmp;
+    tmp = src->createMateria("stone");
 	me->equip(tmp);
 	delete tmp;
     

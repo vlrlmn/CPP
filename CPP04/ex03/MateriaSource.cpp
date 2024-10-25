@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:30:25 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/25 12:57:03 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/25 16:41:48 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,6 @@ AMateria	*MateriaSource::createMateria(const std::string &type)
 			return (learnedMaterias[i]->clone());
 		}
 	}
+    std::cout << "Unexisting type: " << type << "! There are only Ice and Cure materias!" << std::endl;
 	return (NULL);
 }
