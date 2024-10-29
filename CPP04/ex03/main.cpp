@@ -20,9 +20,12 @@ void testDeepCopyCharacter()
 {
     std::cout << "Testing deep copy of Character" << std::endl;
     
+    AMateria *ice = new Ice();
+    AMateria *cure = new Cure();
+
     Character original("Original");
-    original.equip(new Ice());
-    original.equip(new Cure());
+    original.equip(ice);
+    original.equip(cure);
 
     Character clone = original;
 
@@ -41,6 +44,8 @@ void testDeepCopyCharacter()
     std::cout << "After unequipping from original, using materia from cloned character: " << std::endl;
     clone.use(0, clone);
 
+    delete ice;
+    delete cure;
     std::cout << "Deep copy test of Character completed." << std::endl;
 }
 
@@ -48,9 +53,12 @@ void testDeepCopyMateriaSource()
 {
     std::cout << "\nTesting deep copy of MateriaSource" << std::endl;
     
+    AMateria *ice = new Ice();
+    AMateria *cure = new Cure();
+
     MateriaSource originalSource;
-    originalSource.learnMateria(new Ice());
-    originalSource.learnMateria(new Cure());
+    originalSource.learnMateria(ice);
+    originalSource.learnMateria(cure);
 
     MateriaSource cloneSource = originalSource;
 
@@ -66,7 +74,8 @@ void testDeepCopyMateriaSource()
 
     delete materiaFromOriginal;
     delete materiaFromClone;
-
+    delete ice;
+    delete cure;
     std::cout << "Deep copy test of MateriaSource completed." << std::endl;
 }
 

@@ -43,4 +43,4 @@ public:
 };
 
 
-#endif /* CHARACTER_HPP */
+#endif
