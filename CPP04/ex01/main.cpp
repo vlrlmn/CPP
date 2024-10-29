@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:03:49 by lomakinaval       #+#    #+#             */
-/*   Updated: 2024/10/23 16:10:00 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2024/10/29 10:45:02 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void arrayTest()
 		std::cout << i << ":\t";
 		delete arr[i];
 	}
-	std::cout << "----------------- array delited -----------------\n";
+	std::cout << "----------------- array deleted -----------------\n";
 	
 }
 
@@ -59,7 +59,6 @@ void deepCopyTest()
 		std::cout << "\tbasic1 :" << basic.getBrain() << std::endl;
 	}
 	std::cout << "\tbasic2  :" << basic.getBrain() << std::endl;
-
 }
 
 void assignmentTest()
