@@ -16,12 +16,13 @@ class Bureaucrat {
         Bureaucrat &operator=(const Bureaucrat &original);
         ~Bureaucrat();
 
-        const std::string getName();
-        int getGrade();
-
+        const std::string getName() const;
+        int getGrade() const;
         int incrementGrade();
         int decrementGrade();
 
 };
+    
+    std::ostream& operator<<(std::ostream& stream, const Bureaucrat& b);
 
 #endif
