@@ -8,6 +8,17 @@ Bureaucrat::Bureaucrat(const Bureaucrat &original): name(original.name), grade(o
     std::cout << "Copy constructor" << std::endl;
 };
 
+Bureaucrat::Bureaucrat(const std::string name, int grade): name(name){
+    if (grade < 1)
+    //    throw (GradeTooHighException("Construction failed"));
+    else if (grade > 150)
+        // throw (GradeTooLowException("Construction failed"));
+    else
+        this->grade = grade;
+    std::cout << "Parametrized constructor called" << std::endl;
+
+}
+
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &original) {
     if (this != &original)
     {
