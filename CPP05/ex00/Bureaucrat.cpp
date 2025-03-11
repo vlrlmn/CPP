@@ -8,7 +8,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &original): _name(original._name), _grad
     std::cout << "Copy constructor" << std::endl;
 };
 
-Bureaucrat::Bureaucrat(const std::string name, int grade): _name(name) {
+Bureaucrat::Bureaucrat(const std::string& name, int grade): _name(name) {
 
     if (name.empty())
         throw EmptyNameException();
@@ -56,6 +56,6 @@ void Bureaucrat::decrementGrade(void) {
 
 std::ostream& operator<<(std::ostream& stream, const Bureaucrat& b)
 {
-    stream << b.getName() << " ,bureaucrat grade " << b.getGrade() << ".";
+    stream << "Bureaucrat's name: " << b.getName() << "; bureaucrat's grade: " << b.getGrade() << ".";
     return stream;
 }
