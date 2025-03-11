@@ -22,6 +22,7 @@ class Bureaucrat {
 
         void incrementGrade(void);
         void decrementGrade(void);
+
         class GradeTooHighException : public std::exception {
             public:
                 const char* what() const throw() {
