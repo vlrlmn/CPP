@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akeryan <akeryan@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 16:14:03 by akeryan           #+#    #+#             */
-/*   Updated: 2024/05/31 16:20:32 by akeryan          ###   ########.fr       */
+/*   Updated: 2025/03/12 16:59:11 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &oth
 
 const PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other)
 {
-	std::cout << "PresidentialPardonForm assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called Presidential Pardon Form" << std::endl;
 	if (this != &other) {
 		AForm::operator=(other);
 		this->_target = other.getTarget();

@@ -4,10 +4,10 @@
 #define ROBOTONOMY_REQUEST_FORM_HPP
 
 # include <iostream>
-
+#include "AForm.hpp"
 class RobotomyRequestForm {
 	private:
-		std::string target;
+		std::string _target;
 	public:
 		RobotomyRequestForm();
 		RobotomyRequestForm(const std::string target);
