@@ -4,7 +4,7 @@ Form::Form(): _name("Example"), _isSigned(false), _gradeToSign(150), _gradeToExe
     std::cout << "Default constructor. Default name - Example. Signed - false. Grade to sign - 150. Grade to execute - 150." << std::endl;
 }
 
-Form::Form(const std::string& name, bool isSigned, const int gradeToSign, const int gradeToExec): _name(name), _isSigned(false), 
+Form::Form(const std::string& name, const int gradeToSign, const int gradeToExec): _name(name), _isSigned(false), 
             _gradeToSign(gradeToSign), _gradeToExec(gradeToExec) {
     if (name.empty())
         throw EmptyNameException();
@@ -51,14 +51,20 @@ int Form::getGradeToExecute(void) const {
 
 void Form::beSigned(const Bureaucrat &b) {
     if (b.getGrade() > this->getGradeToSign())
-        throw (Form::GradeTooLowException());
-    this->_isSigned = true;
+        throw (Form::GradeTooLowException("Form cannot be signed! This bureaucrat doesn't have enough grade."));
+    if (this->_isSigned)
+        std::cout << "The form is already signed!" <<std::endl;
+    else
+    {
+        this->_isSigned = true;
+        std::cout << b.getName() << " signed " << Form::getName() << std::endl;
+    }
 }
 
 std::ostream& operator<<(std::ostream& stream, const Form& f) {
     stream	<< "Form name: " << f.getName() 
 			<< ", grade to sign: " << f.getGradeToSign()
 			<< ", grade to execute: " << f.getGradeToExecute()
-			<< ", is signed?: " << f.getSignStatus();
+			<< ", sign status: " << f.getSignStatus();
 	return stream;
 }

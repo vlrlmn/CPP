@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade): _name(name) {
         throw GradeTooLowException();
     else
         this->_grade = grade;
-    std::cout << "Parametrized constructor called for: " << name << "; grade: " << grade << std::endl;
+    std::cout << "Parametrized constructor called for bureaucrat"<< std::endl;
 
 }
 

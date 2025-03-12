@@ -17,7 +17,7 @@ class Form {
     public:
 
         Form();
-        Form(const std::string& name, bool isSigned, const int gradeToSign, const int gradeToExec);
+        Form(const std::string& name, const int gradeToSign, const int gradeToExec);
         Form(const Form &original);
         Form &operator=(const Form &original);
         ~Form();
@@ -31,16 +31,20 @@ class Form {
 
         class GradeTooHighException : public std::exception {
             public:
-                const char* what() const throw() {
-                    return "Grade is too high";
-                }
+                GradeTooHighException():_msg("Form cannot be created. Grade is too high!") {}
+                GradeTooHighException(const char *str):_msg(str) {}
+                const char* what() const throw() { return _msg;}
+            private:
+                const char *_msg;
         };
 
         class GradeTooLowException : public std::exception {
             public:
-                const char* what() const throw() {
-                    return "Grade is too low";
-                }
+                GradeTooLowException():_msg("Form cannot be created. Grade is too low!") {}
+                GradeTooLowException(const char *str):_msg(str) {}
+                const char* what() const throw() { return _msg; }
+            private:
+                const char *_msg;
         };
 
          class EmptyNameException : public std::exception {
