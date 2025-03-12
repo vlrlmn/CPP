@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() {
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Example", 145, 143){
 	std::cout << "Default constructor Shrubbery Creation Form" << std::endl;
 }
 
@@ -25,9 +25,26 @@ ShrubberyCreationForm::ShrubberyCreationForm() {
 	std::cout << "Destructor called Shrubbery Creation Form" <<std::endl;
 }
 
-std::string ShrubberyCreationForm::getTarget() {
+std::string ShrubberyCreationForm::getTarget() const {
 	return _target;
 }
 void ShrubberyCreationForm::setTarget(std::string target) {
 	this->_target = target;
+}
+
+void ShrubberyCreationForm::_execute(void) const {
+	std::string filename = this->getTarget() + "_shrubbery";
+	std::string tree = "\
+               ,@@@@@@@,
+       ,,,.   ,@@@@@@&@@,  .oo8888o.
+    ,&@@&%&&%,@@@@@&@@@@@@,8888&88&8o
+   ,%&&%&&%&&%,@@@&@@@/@@@88&88888/88'
+   %&&%&%&/%&&%@@&@@/ /@@@88888&88888'
+   %&&%/ %&&&@@& V /@@' `88|8 `/88@8'
+   `&%\' ` /%&'    |.|       \' '/8'
+       |o|        | |         | |
+       |.|        | |         | |
+  \\/ ._\//_/__/  ,\_//__\\/.  \_//__/_\n";
+
+  std::ofstream file(filename.c_str());
 }

@@ -3,7 +3,8 @@
 #ifndef SHRUBBERY_CREATION_FORM_HPP
 #define SHRUBBERY_CREATION_FORM_HPP
 
-# include <iostream>
+#include <iostream>
+#include <fstream>
 #include "AForm.hpp"
 
 class ShrubberyCreationForm: public AForm {
@@ -17,8 +18,8 @@ class ShrubberyCreationForm: public AForm {
 		ShrubberyCreationForm();
 
 		void setTarget(std::string target);
-		std::string getTarget();
+		std::string getTarget() const;
 		void _execute(void) const;
 };
-
+std::ostream &operator<<(std::ostream &stream, const ShrubberyCreationForm &sh);
 #endif
