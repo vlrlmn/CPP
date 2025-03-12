@@ -12,6 +12,7 @@ int main()
         bob.incrementGrade();
         std::cout << bob << std::endl;
 
+        // Invalid test case to increment and decrement
         std::cout << "\nALICE" << std::endl;
         Bureaucrat alice("Alice", 1);
         alice.decrementGrade();
@@ -21,6 +22,7 @@ int main()
         alice.incrementGrade();
         std::cout << alice << std::endl;
 
+        // Invalid test case to create
         std::cout << "\nTRENT" << std::endl;
         Bureaucrat trent("Trent", -1);
         std::cout << trent << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akeryan <akeryan@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 16:20:18 by akeryan           #+#    #+#             */
-/*   Updated: 2024/05/31 13:50:48 by akeryan          ###   ########.fr       */
+/*   Updated: 2025/03/12 12:23:07 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Form
 				GradeTooHighException(const char *str):_msg(str) { }
 				const char *what() const throw() { return _msg; }
 			private:
-				const char *_msg;	
+				const char *_msg;
 		};
 		class GradeTooLowException: public std::exception
 		{
@@ -52,7 +52,7 @@ class Form
 				GradeTooLowException():_msg("Grade is too LOW") {};
 				const char *what(void) const throw() { return _msg; }
 			private:
-				const char *_msg;	
+				const char *_msg;
 		};
 		class EmptyStringException: public std::exception
 		{

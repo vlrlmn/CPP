@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akeryan <akeryan@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 12:37:54 by akeryan           #+#    #+#             */
-/*   Updated: 2024/05/31 19:25:35 by akeryan          ###   ########.fr       */
+/*   Updated: 2025/03/12 13:17:59 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,20 @@ int main(void)
 					<< std::endl;
 		std::cout << std::endl;
 
-	//Form creation with out of range grade to sign
-		Form form_2("Form_2", 160, 30);
-		std::cout << std::endl;
+	// //Form creation with out of range grade to sign
+	// 	Form form_2("Form_2", 160, 30);
+	// 	std::cout << std::endl;
 
-	//Form creation with out of range grade to execute 
-		Form form_3("Form_3", 80, -5);
-		std::cout << std::endl;
+	// //Form creation with out of range grade to execute 
+	// 	Form form_3("Form_3", 80, -5);
+	// 	std::cout << std::endl;
 		
-	//Form creation with empty name
-		Form form_4("", 80, 5);
-		std::cout << std::endl;
+	// //Form creation with empty name
+	// 	Form form_4("", 80, 5);
+	// 	std::cout << std::endl;
 
 	//testing form signing
+	a.signForm(form1);
 	a.signForm(form1);
 
 	//signing contract by a bureaucrat without corresponding signing grade 
