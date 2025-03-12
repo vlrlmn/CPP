@@ -9,27 +9,27 @@ int main()
         std::cout << bob << std::endl;
         Form form1("form1", 3, 5);
         std::cout << form1 << std::endl;
+        Form form2("form2", 11, 15);
+        bob.signForm(form2);
 
-        //Negative tests
-        // Form form2("form2", 300, 5);
-        // Form form3("form3", 30, 500);
-        // Form form4("form4", 30, -50);
-        // Form form5("form5", -30, 5);
-        // Form form6("", 5, 5);
+        // Negative tests
+        Form form3("form3", 30, 500);
+        Form form4("form4", 30, -50);
+        Form form5("form5", -30, 5);
+        Form form6("", 5, 5);
         
-        //Form signment tests
+        // Form signment tests
         std::cout << "\nALICE SIGNING FORM (enough grade)" << std::endl;
         Bureaucrat alice("Alice", 1);
         std::cout << alice << std::endl;
         std::cout << "\n---BEFORE SIGNMENT" << std::endl;
         std::cout << form1 << std::endl;
-        form1.beSigned(alice);
+        alice.signForm(form1);
         std::cout << "\n---AFTER SIGNMENT" << std::endl;
         std::cout << form1 << std::endl;
-        form1.beSigned(alice);
+        alice.signForm(form1);
         std::cout << "\nBOB SIGNING FORM (not enough grade)" << std::endl;
-        form1.beSigned(bob);
-
+        bob.signForm(form1);
     }
     catch (std::exception & e)
     {

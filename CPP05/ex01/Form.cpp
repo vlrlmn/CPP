@@ -57,7 +57,6 @@ void Form::beSigned(const Bureaucrat &b) {
     else
     {
         this->_isSigned = true;
-        std::cout << b.getName() << " signed " << Form::getName() << std::endl;
     }
 }
 
