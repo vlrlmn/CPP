@@ -8,7 +8,7 @@
 # include "Bureaucrat.hpp"
 class Bureaucrat;
 
-class Form {
+class AForm {
     private:
         const std::string _name;
         bool _isSigned;
@@ -16,11 +16,11 @@ class Form {
         const int _gradeToExec;
     public:
 
-        Form();
-        Form(const std::string& name, const int gradeToSign, const int gradeToExec);
-        Form(const Form &original);
-        Form &operator=(const Form &original);
-        ~Form();
+        AForm();
+        AForm(const std::string& name, const int gradeToSign, const int gradeToExec);
+        AForm(const AForm &original);
+        AForm &operator=(const AForm &original);
+        ~AForm();
 
         std::string getName(void) const;
 		bool getSignStatus(void) const;
