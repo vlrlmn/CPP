@@ -16,7 +16,7 @@ const RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestF
 	std::cout << "Copy assignment operator Robotomy Request Form" << std::endl;
 	if (this != &original) {
 		AForm::operator=(original);
-		this->_target = other.getTarget();
+		this->_target = original.getTarget();
 	}
 	return *this;
 }
