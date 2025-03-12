@@ -19,16 +19,19 @@ class AForm {
         AForm();
         AForm(const std::string& name, const int gradeToSign, const int gradeToExec);
         AForm(const AForm &original);
-        AForm &operator=(const AForm &original);
-        ~AForm();
+        const AForm &operator=(const AForm &original);
+        virtual ~AForm();
 
         std::string getName(void) const;
 		bool getSignStatus(void) const;
 		int getGradeToSign(void) const;
 		int getGradeToExecute(void) const;
 
-        void beSigned(const Bureaucrat &b);
+        void setSignatureStatus(const bool status);
 
+        void beSigned(const Bureaucrat &b);
+        int execute(Bureaucrat const & executor) const;
+        virtual void _execute(void) const = 0;
         class GradeTooHighException : public std::exception {
             public:
                 GradeTooHighException():_msg("Form cannot be created. Grade is too high!") {}

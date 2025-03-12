@@ -24,3 +24,10 @@ const ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCre
 ShrubberyCreationForm::ShrubberyCreationForm() {
 	std::cout << "Destructor called Shrubbery Creation Form" <<std::endl;
 }
+
+std::string ShrubberyCreationForm::getTarget() {
+	return _target;
+}
+void ShrubberyCreationForm::setTarget(std::string target) {
+	this->_target = target;
+}

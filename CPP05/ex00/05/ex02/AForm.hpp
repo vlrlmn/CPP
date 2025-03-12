@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akeryan <akeryan@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 19:48:01 by akeryan           #+#    #+#             */
-/*   Updated: 2024/05/31 14:05:20 by akeryan          ###   ########.fr       */
+/*   Updated: 2025/03/12 17:22:08 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ class AForm
 				GradeTooHighException(const char *str):_msg(str) { }
 				const char *what() const throw() { return _msg; }
 			private:
-				const char *_msg;	
+				const char *_msg;
 		};
 		class GradeTooLowException: public std::exception
 		{
