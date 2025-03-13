@@ -12,7 +12,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &ori
 	std::cout << "Copy constructor Presidential Pardon Form" << std::endl;
 }
 
-const PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &original) {
+const PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &original): AForm(original) {
     std::cout << "Copy assignment constructor called Presidential Pardon Form" << std::endl;
 	if (this != &original) {
 		AForm::operator=(original);
