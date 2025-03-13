@@ -32,6 +32,7 @@ class AForm {
         void beSigned(const Bureaucrat &b);
         int execute(Bureaucrat const & executor) const;
         virtual void _execute(void) const = 0;
+
         class GradeTooHighException : public std::exception {
             public:
                 GradeTooHighException():_msg("Form cannot be created. Grade is too high!") {}

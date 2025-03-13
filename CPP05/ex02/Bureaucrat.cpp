@@ -22,7 +22,7 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade): _name(name) {
 
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat &original) {
+const Bureaucrat& Bureaucrat::operator=(const Bureaucrat &original) {
     if (this != &original) {
         this->_grade = original.getGrade();
     }
@@ -54,7 +54,7 @@ void Bureaucrat::decrementGrade(void) {
     this->_grade++;
 };
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form) {
     try {
         if (!form.getSignStatus()) {
             form.beSigned(*this);
@@ -65,15 +65,24 @@ void Bureaucrat::signForm(Form &form) {
         {
             std::cout << "This form is already signed!" << std::endl;
         }
-    } catch (Form::GradeTooLowException) {
-        std::cout   << "Bureaucrat " << this->getName() << " couldn't sign " << form.getName()
-                    << " because grade should be up to " << form.getGradeToSign() << std::endl;
+    } catch (AForm::GradeTooLowException) {
+        std::cout   << "Bureaucrat " << this->getName() 
+                    << " couldn't sign " << form.getName()
+                    << " because grade should be up to " 
+                    << form.getGradeToSign() << std::endl;
         throw;           
     }
 }
 
-std::ostream& operator<<(std::ostream& stream, const Bureaucrat& b)
-{
-    stream << "Bureaucrat's name: " << b.getName() << "; bureaucrat's grade: " << b.getGrade() << ".";
+std::ostream& operator<<(std::ostream& stream, const Bureaucrat& b) {
+    stream  << "Bureaucrat's name: " << b.getName() 
+            << "; bureaucrat's grade: " << b.getGrade() << "." << std::endl;
     return stream;
+}
+
+void Bureaucrat::executeForm(AForm const &form) {
+    if (form.execute(*this)) {
+        std::cout   << "Bureaucrat " << this->getName() 
+                    << " executed " << form.getName() << std::endl;
+    }
 }

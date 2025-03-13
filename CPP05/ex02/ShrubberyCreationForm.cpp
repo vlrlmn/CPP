@@ -35,16 +35,28 @@ void ShrubberyCreationForm::setTarget(std::string target) {
 void ShrubberyCreationForm::_execute(void) const {
 	std::string filename = this->getTarget() + "_shrubbery";
 	std::string tree = "\
-               ,@@@@@@@,
-       ,,,.   ,@@@@@@&@@,  .oo8888o.
-    ,&@@&%&&%,@@@@@&@@@@@@,8888&88&8o
-   ,%&&%&&%&&%,@@@&@@@/@@@88&88888/88'
-   %&&%&%&/%&&%@@&@@/ /@@@88888&88888'
-   %&&%/ %&&&@@& V /@@' `88|8 `/88@8'
-   `&%\' ` /%&'    |.|       \' '/8'
-       |o|        | |         | |
-       |.|        | |         | |
-  \\/ ._\//_/__/  ,\_//__\\/.  \_//__/_\n";
+				   $$\n\
+			     & && &\n\
+			  &&  & && &&\n\
+			&&& &&  & && &&\n\
+		 & &--&-|& ()|- @, &&\n\
+		&--(-&-&||-& -_-)_&-_&\n\
+	  &() &--&|()|-&-- '% & ()\n\
+	  &_-_&&_- |& |&&-&__%_-_& &&\n\
+	 &&   && & &| &| -& & % ()& -&&\n\
+	 ()&_---()&-&-|&&-&&--%---()~\n\
+	             -|||\n\
+				  |||\n\
+				  |||\n\
+				  |||\n";
 
-  std::ofstream file(filename.c_str());
+	std::ofstream file(filename.c_str());
+
+	if (file.is_open()) {
+		file << tree;
+	}
+}
+
+std::ostream &operator<<(std::ostream &stream, const ShrubberyCreationForm &sh) {
+	stream << 
 }

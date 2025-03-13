@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akeryan <akeryan@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 10:07:04 by akeryan           #+#    #+#             */
-/*   Updated: 2024/05/31 14:06:56 by akeryan          ###   ########.fr       */
+/*   Updated: 2025/03/13 12:29:48 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,21 +71,7 @@ void ShrubberyCreationForm::setTarget(const std::string target)
 void ShrubberyCreationForm::_execute(void) const
 {
 	std::string filename = this->getTarget() + "_shrubbery";
-	std::string	tree = "\
-				   $$\n\
-			     & && &\n\
-			  &&  & && &&\n\
-			&&& &&  & && &&\n\
-		 & &--&-|& ()|- @, &&\n\
-		&--(-&-&||-& -_-)_&-_&\n\
-	  &() &--&|()|-&-- '% & ()\n\
-	  &_-_&&_- |& |&&-&__%_-_& &&\n\
-	 &&   && & &| &| -& & % ()& -&&\n\
-	 ()&_---()&-&-|&&-&&--%---()~\n\
-	             -|||\n\
-				  |||\n\
-				  |||\n\
-				  |||\n";
+	std::string	tree = "";
 
 	std::ofstream file(filename.c_str());
 	
