@@ -4,8 +4,9 @@
 #define ROBOTONOMY_REQUEST_FORM_HPP
 
 # include <iostream>
+# include <ctime>
 #include "AForm.hpp"
-class RobotomyRequestForm {
+class RobotomyRequestForm: public AForm {
 	private:
 		std::string _target;
 	public:
@@ -13,9 +14,11 @@ class RobotomyRequestForm {
 		RobotomyRequestForm(const std::string target);
 		RobotomyRequestForm(const RobotomyRequestForm &original);
 		const RobotomyRequestForm &operator=(const RobotomyRequestForm &original);
-		RobotomyRequestForm();
+		~RobotomyRequestForm();
 
 		std::string getTarget();
+		void setTarget(const std::string target);
+		void _execute(void) const;
 };
 
 #endif
