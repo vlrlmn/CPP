@@ -4,12 +4,15 @@ ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Example", 145, 143){
 	std::cout << "Default constructor Shrubbery Creation Form" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string target): _target(target) {
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string target): AForm("Shrubbery", 145, 137) {
 	std::cout << "Parametrized constructor Shrubbery Creation Form" << std::endl;
+	if (target == "")
+		throw(AForm::EmptyNameException());
+	this->_target = target;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &original) {
-
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &original): AForm(original) {
+	std::cout << "Copy Constructor Shrubbery Creation Form" << std::endl;
 }
 
 const ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &original) {
@@ -21,18 +24,22 @@ const ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCre
 	return *this;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm() {
+ShrubberyCreationForm::~ShrubberyCreationForm() {
 	std::cout << "Destructor called Shrubbery Creation Form" <<std::endl;
 }
 
 std::string ShrubberyCreationForm::getTarget() const {
-	return _target;
-}
-void ShrubberyCreationForm::setTarget(std::string target) {
-	this->_target = target;
+	return this->_target;
 }
 
-void ShrubberyCreationForm::_execute(void) const {
+void ShrubberyCreationForm::setTarget(std::string target) {
+	if (target == "")
+		throw (AForm::EmptyNameException());
+	else
+		this->_target = target;
+}
+
+void ShrubberyCreationForm::_execute() const {
 	std::string filename = this->getTarget() + "_shrubbery";
 	std::string tree = "\
 				   $$\n\
@@ -54,9 +61,16 @@ void ShrubberyCreationForm::_execute(void) const {
 
 	if (file.is_open()) {
 		file << tree;
+	} else {
+		std::cout << "Failed to open file" << std::endl;
 	}
 }
 
-std::ostream &operator<<(std::ostream &stream, const ShrubberyCreationForm &sh) {
-	stream << 
+std::ostream& operator<<(std::ostream& stream, const AForm& f) {
+	stream  << "Form name: " << f.getName() 
+        	<< "; signature status: " << f.getSignStatus()
+			<< "; grade to sign: " << f.getGradeToSign()
+			<< "; grade to execute: " << f.getGradeToExecute()
+			<< "." << std::endl;
+    return stream;
 }
