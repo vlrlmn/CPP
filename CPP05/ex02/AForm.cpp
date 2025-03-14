@@ -31,7 +31,7 @@ const AForm& AForm::operator=(const AForm &original) {
 }
 
 AForm::~AForm() {
-     std::cout << "Destructor called" <<std::endl;
+     std::cout << "Destructor called AForm" <<std::endl;
 }
 
 std::string AForm::getName(void) const {
@@ -58,7 +58,7 @@ void AForm::beSigned(const Bureaucrat &b) {
     {
         this->setSignStatus(true);
         std::cout	<< "Bueraucrat " << b.getName()
-				<< " signed " << this->getName()
+				<< " signed form " << this->getName()
 				<< std::endl;
     }
 }
