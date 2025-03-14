@@ -1,9 +1,8 @@
-NAME = form
+NAME = aform
 
 SRC = 	main.cpp \
 		Bureaucrat.cpp \
 		AForm.cpp \
-		Bureaucrat.cpp \
 		PresidentialPardonForm.cpp \
 		RobotomyRequestForm.cpp \
 		ShrubberyCreationForm.cpp \

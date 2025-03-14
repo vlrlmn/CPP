@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Example", 145, 143){
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Shrubbery", 145, 143){
 	std::cout << "Default constructor Shrubbery Creation Form" << std::endl;
 }
 
@@ -66,11 +66,3 @@ void ShrubberyCreationForm::_execute() const {
 	}
 }
 
-std::ostream& operator<<(std::ostream& stream, const AForm& f) {
-	stream  << "Form name: " << f.getName() 
-        	<< "; signature status: " << f.getSignStatus()
-			<< "; grade to sign: " << f.getGradeToSign()
-			<< "; grade to execute: " << f.getGradeToExecute()
-			<< "." << std::endl;
-    return stream;
-}

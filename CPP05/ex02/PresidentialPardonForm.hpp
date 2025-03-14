@@ -20,6 +20,6 @@ class PresidentialPardonForm: public AForm {
 		void setTarget(std::string target);
 		void _execute(void) const;
 };
-std::ostream& operator<<(std::ostream& stream, const AForm& f);
+
 
 #endif

@@ -83,6 +83,6 @@ std::ostream& operator<<(std::ostream& stream, const Bureaucrat& b) {
 void Bureaucrat::executeForm(AForm const &form) {
     if (form.execute(*this)) {
         std::cout   << "Bureaucrat " << this->getName() 
-                    << " executed " << form.getName() << std::endl;
+                    << " executed form " << form.getName() << std::endl;
     }
 }

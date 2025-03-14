@@ -1,6 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(): AForm("Defaut", 72, 45) {
+RobotomyRequestForm::RobotomyRequestForm(): AForm("Robotomy", 72, 45) {
 	std::cout << "Default constructor Robotomy Request Form" << std::endl;
 }
 
@@ -50,11 +50,3 @@ void RobotomyRequestForm::_execute(void) const {
 	}
 }
 
-std::ostream &operator<<(std::ostream &stream, const RobotomyRequestForm &ro) {
-	stream  << "Form name: " << ro.getName() 
-        	<< "; signature status: " << ro.getSignStatus()
-			<< "; grade to sign: " << ro.getGradeToSign()
-			<< "; grade to execute: " << ro.getGradeToExecute()
-			<< "." << std::endl;
-    return stream;
-}

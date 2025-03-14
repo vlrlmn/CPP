@@ -1,10 +1,10 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(): AForm("Example", 25, 5) {
+PresidentialPardonForm::PresidentialPardonForm(): AForm("Presidential", 25, 5) {
 	std::cout << "Default constructor Presidential Pardon Form" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string target): AForm("Example", 25, 5) {
+PresidentialPardonForm::PresidentialPardonForm(const std::string target): AForm("Presidential", 25, 5) {
 	std::cout << "Parametrized constructor Presidential Pardon Form" << std::endl;
 	if (target == "")
 		throw (AForm::EmptyNameException());
@@ -24,7 +24,7 @@ const PresidentialPardonForm& PresidentialPardonForm::operator=(const Presidenti
 	return *this;
 }
 
-PresidentialPardonForm::PresidentialPardonForm() {
+PresidentialPardonForm::~PresidentialPardonForm() {
     std::cout << "Destructor called Presidential Pardon Form" <<std::endl;
 }
 
@@ -41,13 +41,4 @@ void PresidentialPardonForm::setTarget(std::string target) {
 
 void PresidentialPardonForm::_execute() const {
 	std::cout << "The target " << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-}
-
-std::ostream& operator<<(std::ostream& stream, const AForm& f) {
-	stream  << "Form name: " << f.getName() 
-        	<< "; signature status: " << f.getSignStatus()
-			<< "; grade to sign: " << f.getGradeToSign()
-			<< "; grade to execute: " << f.getGradeToExecute()
-			<< "." << std::endl;
-    return stream;
 }
