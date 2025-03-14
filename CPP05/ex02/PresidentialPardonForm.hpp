@@ -6,7 +6,7 @@
 #include <iostream>
 #include "AForm.hpp"
 
-class PresidentialPardonForm {
+class PresidentialPardonForm: public AForm {
 	private:
 		std::string _target;
 	public:
@@ -14,9 +14,12 @@ class PresidentialPardonForm {
 		PresidentialPardonForm(const std::string target);
 		PresidentialPardonForm(const PresidentialPardonForm &original);
 		const PresidentialPardonForm &operator=(const PresidentialPardonForm &original);
-		PresidentialPardonForm();
+		~PresidentialPardonForm();
 
-		std::string getTarget();
+		std::string getTarget() const;
+		void setTarget(std::string target);
+		void _execute(void) const;
 };
+std::ostream& operator<<(std::ostream& stream, const AForm& f);
 
 #endif
