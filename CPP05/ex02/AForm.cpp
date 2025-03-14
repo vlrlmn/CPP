@@ -22,7 +22,7 @@ AForm::AForm(const AForm &original): _name(original.getName()),
     std::cout << "Copy constructor called" << std::endl;
 }
 
-AForm& AForm::operator=(const AForm &original) {
+const AForm& AForm::operator=(const AForm &original) {
     if (this != &original) {
 		this->_isSigned = original.getSignStatus();
 	}
