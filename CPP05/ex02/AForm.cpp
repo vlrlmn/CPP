@@ -67,3 +67,18 @@ std::ostream& operator<<(std::ostream& stream, const AForm& f) {
 			<< ", sign status: " << f.getSignStatus() << std::endl;
 	return stream;
 }
+
+int AForm::execute(Bureaucrat const & executor) const {
+    try {
+        if (this->getSignStatus() == false) {
+            std::cout << "Form " << this->getName() << " cannot be executed! The form is not signed!" << std::endl;
+        } else if (executor.getGrade() > this->getGradeToExecute()) {
+            throw (AForm::GradeTooLowException());
+        }
+        this->_execute();
+    } catch (AForm::GradeTooLowException) {
+        std::cout << "Form " << this->getName() << "cannot be executed because " << executor.getName() << "doesn't have enough grade" << std::endl;
+        throw;
+    }
+    return 1;
+}
