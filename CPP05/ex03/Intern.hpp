@@ -17,7 +17,7 @@ class Intern {
         const Intern &operator=(const Bureaucrat &original);
         ~Intern();
 
-        void makeForm(std::string formName, std::string formTarget);
+        AForm& makeForm(std::string formName, std::string formTarget);
     
         
         class GradeTooHighException : public std::exception {
