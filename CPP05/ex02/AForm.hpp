@@ -27,7 +27,7 @@ class AForm {
 		int getGradeToSign(void) const;
 		int getGradeToExecute(void) const;
 
-        void setSignatureStatus(const bool status);
+        void setSignStatus(const bool status);
 
         void beSigned(const Bureaucrat &b);
         int execute(Bureaucrat const & executor) const;

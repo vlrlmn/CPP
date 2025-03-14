@@ -56,7 +56,10 @@ void AForm::beSigned(const Bureaucrat &b) {
         std::cout << "The form is already signed!" <<std::endl;
     else
     {
-        this->_isSigned = true;
+        this->setSignStatus(true);
+        std::cout	<< "Bueraucrat " << b.getName()
+				<< " signed " << this->getName()
+				<< std::endl;
     }
 }
 
@@ -81,4 +84,8 @@ int AForm::execute(Bureaucrat const & executor) const {
         throw;
     }
     return 1;
+}
+
+void AForm::setSignStatus(const bool status) {
+    this->_isSigned = status;
 }
