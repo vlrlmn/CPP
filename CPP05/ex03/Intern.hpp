@@ -4,42 +4,36 @@
 #define INTERN_HPP
 
 #include <iostream>
-# include "AForm.hpp"
-class AForm;
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+
+enum {
+    SHRUBBERY,
+    ROBOTOMY,
+    PRESIDENTIAL,
+    NUM_FORMS
+};
 
 class Intern {
   
+    private:
+        AForm* (Intern::*formCreators[NUM_FORMS])(const std::string&) const;
+        AForm* makeShrubberyForm(const std::string& target);
+        AForm* makeRobotomyForm();
+        AForm* makePresidentialForm();
 
     public:
         Intern();
         Intern(const std::string& name, int grade);
         Intern(const Bureaucrat &original);
-        const Intern &operator=(const Bureaucrat &original);
+        const Intern &operator=(const Intern &original);
         ~Intern();
 
-        AForm *makeForm(std::string formName, std::string formTarget);
+        AForm *makeForm(const std::string formName, const std::string formTarget);
     
         
-        class GradeTooHighException : public std::exception {
-            public:
-                const char* what() const throw() {
-                    return "Grade is too high";
-                }
-        };
-
-        class GradeTooLowException : public std::exception {
-            public:
-                const char* what() const throw() {
-                    return "Grade is too low";
-                }
-        };
-
-        class EmptyNameException: public std::exception {
-            public:
-                const char* what() const throw() {
-                    return "Empty name";
-                }
-        };
 };
     
 std::ostream& operator<<(std::ostream& stream, const Bureaucrat& b);
