@@ -1,44 +1,59 @@
 #include "Intern.hpp"
-#include <iostream>
+
+const std::string Intern::forms[3] = {
+    "shrubbery creation",
+    "robotomy request",
+    "presidential pardon"
+};
 
 Intern::Intern() {
-    formCreators[SHRUBBERY] = &Intern::makeShrubberyForm;
-    formCreators[ROBOTOMY] = &Intern::makeRobotomyForm;
-    formCreators[PRESIDENTIAL] = &Intern::makePresidentialForm;
+    std::cout << "Intern default constructor called" << std::endl;
+    formCreators[0] = &Intern::makeShrubberyForm;
+    formCreators[1] = &Intern::makeRobotomyForm;
+    formCreators[2] = &Intern::makePresidentialForm;
+
 }
 
-Intern::Intern(const std::string& name, int grade) {}
-
 Intern::Intern(const Bureaucrat &original) {
+    std::cout << "Intern copy constructor called" << std::endl;
     *this = original;
 }
 
 const Intern& Intern::operator=(const Intern &original) {
-    if (this != &original)
-    {
-
-    }
+    std::cout << "Intern copy assignment constructor called" << std::endl;
+    (void)original;
     return *this;
 }
 
 Intern::~Intern() {
-    std::cout << "Destructor for Intern called" << std::endl;
+    std::cout << "Destructor called for Intern" << std::endl;
 }
 
 AForm *Intern::makeForm(std::string formName, std::string formTarget) {
     std::cout << "Intern creates " << formName << std::endl;
 }
 
-AForm* (Intern::*formCreators[NUM_FORMS])(const std::string&) const;
-
 AForm* Intern::makeShrubberyForm(const std::string& target) {
     return new ShrubberyCreationForm(target);
 }
 
-AForm* makeRobotomyForm(const std::string& target) {
+AForm* Intern::makeRobotomyForm(const std::string& target) {
     return new RobotomyRequestForm(target);
 }
 
-AForm* makePresidentialForm(const std::string& target) {
+AForm* Intern::makePresidentialForm(const std::string& target) {
     return new PresidentialPardonForm(target);
+}
+
+AForm *Intern::makeForm(const std::string name, const std::string target) {
+    AForm *formPtr = NULL;
+    for (int i = 0; i < 3; i++)
+    {
+        if (name == forms[i]) {
+            formPtr = (this->*formCreators[i])(target);
+        }
+    }
+    if (!formPtr)
+        throw(FormCreationFailureException());
+    return formPtr;
 }
