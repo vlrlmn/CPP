@@ -29,10 +29,6 @@ Intern::~Intern() {
     std::cout << "Destructor called for Intern" << std::endl;
 }
 
-AForm *Intern::makeForm(std::string formName, std::string formTarget) {
-    std::cout << "Intern creates " << formName << std::endl;
-}
-
 AForm* Intern::makeShrubberyForm(const std::string& target) {
     return new ShrubberyCreationForm(target);
 }
