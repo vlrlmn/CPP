@@ -19,19 +19,19 @@ AForm::AForm(const AForm &original): _name(original.getName()),
                                     _isSigned(original.getSignStatus()),
 								_gradeToSign(original.getGradeToExecute()),
 								_gradeToExec(original.getGradeToExecute()) {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Copy constructor called for AForm" << std::endl;
 }
 
 const AForm& AForm::operator=(const AForm &original) {
     if (this != &original) {
 		this->_isSigned = original.getSignStatus();
 	}
-    std::cout << "Copy assignment constructor AForm" << std::endl;
+    std::cout << "Copy assignment constructor for AForm" << std::endl;
 	return *this;
 }
 
 AForm::~AForm() {
-     std::cout << "Destructor called AForm" <<std::endl;
+     std::cout << "Destructor called for AForm" <<std::endl;
 }
 
 std::string AForm::getName(void) const {
@@ -74,14 +74,14 @@ std::ostream& operator<<(std::ostream& stream, const AForm& f) {
 int AForm::execute(Bureaucrat const & executor) const {
     try {
         if (this->getSignStatus() == false) {
-            std::cout << "Form " << this->getName() << " cannot be executed! The form is not signed!" << std::endl;
+            std::cout << "AForm " << this->getName() << " cannot be executed! The form is not signed!" << std::endl;
             return 0;
         } else if (executor.getGrade() > this->getGradeToExecute()) {
             throw (AForm::GradeTooLowException());
         }
         this->_execute();
     } catch (AForm::GradeTooLowException) {
-        std::cout << "Form " << this->getName() << "cannot be executed because " << executor.getName() << "doesn't have enough grade" << std::endl;
+        std::cout << "AForm " << this->getName() << "cannot be executed because " << executor.getName() << "doesn't have enough grade" << std::endl;
         throw;
     }
     return 1;

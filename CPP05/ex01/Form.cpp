@@ -19,19 +19,19 @@ Form::Form(const Form &original): _name(original.getName()),
 								_gradeToSign(original.getGradeToExecute()),
 								_gradeToExec(original.getGradeToExecute()) {
     *this = original;
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Copy constructor called for form" << std::endl;
 }
 
 Form& Form::operator=(const Form &original) {
     if (this != &original) {
 		this->_isSigned = original.getSignStatus();
 	}
-    std::cout << "Copy assignment constructor called" << std::endl;
+    std::cout << "Copy assignment constructor called for form" << std::endl;
 	return *this;
 }
 
 Form::~Form() {
-     std::cout << "Destructor called Form" <<std::endl;
+     std::cout << "Destructor called for form" <<std::endl;
 }
 
 std::string Form::getName(void) const {
