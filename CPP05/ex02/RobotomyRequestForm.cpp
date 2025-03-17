@@ -32,7 +32,6 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 	std::cout << "Destructor called Robotomy Request Form" <<std::endl;
 }
 
-
 void RobotomyRequestForm::setTarget(const std::string target) {
 	if (target == "")
 		throw(AForm::EmptyNameException());
