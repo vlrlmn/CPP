@@ -3,8 +3,7 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include <iostream>
-# include "AForm.hpp"
+#include "AForm.hpp"
 class AForm;
 
 class Bureaucrat {

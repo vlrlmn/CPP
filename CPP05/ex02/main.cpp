@@ -12,13 +12,13 @@ int main(void)
 	AForm *pPtr = new PresidentialPardonForm("Bill");
 
 	std::cout << std::endl << "SHRUBBERY FORM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-// Printing and Executing ShrubberyCreationForm through AForm pointer 
+	// Printing and Executing ShrubberyCreationForm through AForm pointer
 	if (ShrubberyCreationForm *newPtr = dynamic_cast<ShrubberyCreationForm *>(shPtr)) {
 		std::cout << *shPtr << std::endl;
 	} else {
 		std::cout << "Failed to cast AForm* to ShrubberyCreationForm*" << std::endl;
 	}
-	//a.signForm(*shPtr);
+	a.signForm(*shPtr);
 	a.executeForm(*shPtr);
 	
 	std::cout << std::endl << "ROBOTOMY FORM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
