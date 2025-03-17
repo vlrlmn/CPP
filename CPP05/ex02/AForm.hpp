@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include "Bureaucrat.hpp"
+
 class Bureaucrat;
 
 class AForm {
@@ -14,8 +15,8 @@ class AForm {
         bool _isSigned;
         const int _gradeToSign;
         const int _gradeToExec;
-    public:
 
+    public:
         AForm();
         AForm(const std::string& name, const int gradeToSign, const int gradeToExec);
         AForm(const AForm &original);
@@ -28,7 +29,6 @@ class AForm {
 		int getGradeToExecute(void) const;
 
         void setSignStatus(const bool status);
-
         void beSigned(const Bureaucrat &b);
         int execute(Bureaucrat const & executor) const;
         virtual void _execute(void) const = 0;
@@ -59,6 +59,7 @@ class AForm {
         };
 
 };
+
 std::ostream& operator<<(std::ostream& stream, const AForm& f);
 
 #endif

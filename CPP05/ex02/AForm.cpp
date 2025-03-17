@@ -17,8 +17,8 @@ AForm::AForm(const std::string& name, const int gradeToSign, const int gradeToEx
 
 AForm::AForm(const AForm &original): _name(original.getName()), 
 								_gradeToSign(original.getGradeToExecute()),
-								_gradeToExec(original.getGradeToExecute()) {
-    *this = original;
+								_gradeToExec(original.getGradeToExecute()),
+                                _isSigned(original.getSignStatus()) {
     std::cout << "Copy constructor called" << std::endl;
 }
 
@@ -26,7 +26,7 @@ const AForm& AForm::operator=(const AForm &original) {
     if (this != &original) {
 		this->_isSigned = original.getSignStatus();
 	}
-    std::cout << "Copy assignment constructor called" << std::endl;
+    std::cout << "Copy assignment constructor AForm" << std::endl;
 	return *this;
 }
 

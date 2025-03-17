@@ -4,8 +4,8 @@
 #define BUREAUCRAT_HPP
 
 #include "AForm.hpp"
-class AForm;
 
+class AForm;
 class Bureaucrat {
     private:
         const std::string _name;
