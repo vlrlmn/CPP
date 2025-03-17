@@ -4,6 +4,7 @@ int main()
 {
     try
     {
+        //Valid tests
         std::cout << "BOB" << std::endl;
         Bureaucrat bob("Bob", 10);
         bob.decrementGrade();
@@ -22,12 +23,12 @@ int main()
         alice.incrementGrade();
         std::cout << alice << std::endl;
 
-        // Invalid test case to create
+        // Invalid test case too high
         std::cout << "\nTRENT" << std::endl;
         Bureaucrat trent("Trent", -1);
         std::cout << trent << std::endl;
 
-
+        // Invalid test case too low
         std::cout << "\nMALLORY" << std::endl;
         Bureaucrat mallory("Mallory", 151);
 

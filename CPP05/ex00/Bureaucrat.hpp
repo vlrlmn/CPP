@@ -4,6 +4,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include <string>
 
 class Bureaucrat {
     private:
@@ -45,6 +46,6 @@ class Bureaucrat {
         };
 };
     
-    std::ostream& operator<<(std::ostream& stream, const Bureaucrat& b);
+std::ostream& operator<<(std::ostream& stream, const Bureaucrat& b);
 
 #endif
