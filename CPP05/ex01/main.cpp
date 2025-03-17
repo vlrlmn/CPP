@@ -44,14 +44,15 @@ int main() {
     try {
         Bureaucrat alice("Alice", 1);
         Form form1("form1", 3, 5);
-        std::cout << std::endl << "---------------ALICE SIGNING FORM (enough grade)---------------" << std::endl;
+        std::cout << std::endl << "---------------ALICE SIGNING FORM---------------" << std::endl;
         std::cout << alice << std::endl;
-        std::cout << "---BEFORE SIGNMENT" << std::endl;
+        std::cout <<  std::endl << "---BEFORE SIGNMENT" << std::endl;
         std::cout << form1 << std::endl;
         alice.signForm(form1);
-        std::cout << "---AFTER SIGNMENT" << std::endl;
+        std::cout <<  std::endl << "---AFTER SIGNMENT" << std::endl;
         std::cout << form1 << std::endl;
         alice.signForm(form1);
+        std::cout << std::endl << "---------------CLEANUP---------------" << std::endl;
     } catch (const std::exception& e) {
         std::cout << "EXCEPTION (Alice Signing): " << e.what() << std::endl;
     }
