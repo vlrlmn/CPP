@@ -23,7 +23,7 @@ int main(void)
 	
 	std::cout << std::endl << "ROBOTOMY FORM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
 	a.signForm(*rPtr);
-	a.executeForm(*rPtr);	
+	a.executeForm(*rPtr);
 
 	std::cout << std::endl << "PRESIDENTIAL FORM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
 	a.signForm(*pPtr);
