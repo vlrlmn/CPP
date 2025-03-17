@@ -2,40 +2,69 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
-#include <iostream>
 
-int main(void)
-{
-	Bureaucrat a("Boris", 4);
-	AForm *shPtr = new ShrubberyCreationForm("Park");
-	AForm *rPtr = new RobotomyRequestForm("Robo");
-	AForm *pPtr = new PresidentialPardonForm("Bill");
+int main() {
+    AForm *shPtr = nullptr;
+    AForm *rPtr = nullptr;
+    AForm *pPtr = nullptr;
+    AForm *invalidPtr = nullptr;
 
-	std::cout << std::endl << "SHRUBBERY FORM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-	// Printing and Executing ShrubberyCreationForm through AForm pointer
-	if (ShrubberyCreationForm *newPtr = dynamic_cast<ShrubberyCreationForm *>(shPtr)) {
-		std::cout << *shPtr << std::endl;
-	} else {
-		std::cout << "Failed to cast AForm* to ShrubberyCreationForm*" << std::endl;
-	}
-	a.signForm(*shPtr);
-	a.executeForm(*shPtr);
-	
-	std::cout << std::endl << "ROBOTOMY FORM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-	a.signForm(*rPtr);
-	a.executeForm(*rPtr);
+	Bureaucrat highRank("Alice", 2);
+	Bureaucrat lowRank("Bob", 149);
+    try {
+        shPtr = new ShrubberyCreationForm("Garden");
+        rPtr = new RobotomyRequestForm("Robot");
+        pPtr = new PresidentialPardonForm("Criminal");
 
-	std::cout << std::endl << "PRESIDENTIAL FORM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-	a.signForm(*pPtr);
-	a.executeForm(*pPtr);
+        std::cout << std::endl << "-----------------FORMS CREATION-----------------" << std::endl;
+    } catch (const std::exception& e) {
+        std::cout << "EXCEPTION! During form creation: " << e.what() << std::endl;
+    }
 
-	std::cout << std::endl << "DONE ----------------------------------------------------" << std::endl;
+    try {
+        invalidPtr = new PresidentialPardonForm("");
+    } catch (const std::exception& e) {
+        std::cout << "EXCEPTION! Failed to create an invalid form: " << e.what() << std::endl;
+    }
 
-	delete shPtr;
-	delete rPtr;
-	delete pPtr;
+    try {
+        std::cout << std::endl << "-----------------SIGNING FORMS-----------------" << std::endl;
+        highRank.signForm(*shPtr);
+    } catch (const std::exception& e) {
+        std::cout << "EXCEPTION! Signing Shrubbery: " << e.what() << std::endl;
+    }
 
-	return 0;
+    try {
+        lowRank.signForm(*rPtr);
+    } catch (const std::exception& e) {
+        std::cout << "EXCEPTION! Signing Robotomy: " << e.what() << std::endl;
+    }
+
+    try {
+        std::cout << std::endl << "-----------------EXECUTING FORMS-----------------" << std::endl;
+        highRank.executeForm(*shPtr);
+    } catch (const std::exception& e) {
+        std::cout << "EXCEPTION! Executing Shrubbery: " << e.what() << std::endl;
+    }
+
+    try {
+        lowRank.executeForm(*rPtr);
+    } catch (const std::exception& e) {
+        std::cout << "EXCEPTION! Executing unsigned Robotomy: " << e.what() << std::endl;
+    }
+
+    try {
+        highRank.signForm(*pPtr);
+        highRank.executeForm(*pPtr);
+    } catch (const std::exception& e) {
+        std::cout << "EXCEPTION! Signing/executing Presidential: " << e.what() << std::endl;
+    }
+
+    std::cout << std::endl << "-----------------CLEANUP-----------------" << std::endl;
+    delete shPtr;
+    delete rPtr;
+    delete pPtr;
+    delete invalidPtr;
+
+    return 0;
 }
-
-

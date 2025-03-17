@@ -16,9 +16,9 @@ AForm::AForm(const std::string& name, const int gradeToSign, const int gradeToEx
 }
 
 AForm::AForm(const AForm &original): _name(original.getName()), 
+                                    _isSigned(original.getSignStatus()),
 								_gradeToSign(original.getGradeToExecute()),
-								_gradeToExec(original.getGradeToExecute()),
-                                _isSigned(original.getSignStatus()) {
+								_gradeToExec(original.getGradeToExecute()) {
     std::cout << "Copy constructor called" << std::endl;
 }
 

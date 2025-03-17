@@ -38,6 +38,7 @@ void ShrubberyCreationForm::setTarget(std::string target) {
 	else
 		this->_target = target;
 }
+
 void ShrubberyCreationForm::_execute() const {
     std::string filename = this->getTarget() + "_shrubbery";
     std::string tree = "\
