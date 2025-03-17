@@ -32,7 +32,6 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 	std::cout << "Destructor called Robotomy Request Form" <<std::endl;
 }
 
-
 void RobotomyRequestForm::setTarget(const std::string target) {
 	if (target == "")
 		throw(AForm::EmptyNameException());
@@ -40,9 +39,12 @@ void RobotomyRequestForm::setTarget(const std::string target) {
 		this->setTarget(target);
 }
 
-void RobotomyRequestForm::_execute(void) const {
-	time_t cur_time = time(NULL);
-	if (cur_time % 2) {
+void RobotomyRequestForm::_execute() const {
+
+	srand(static_cast<unsigned int>(time(NULL)));
+	
+	std::cout << "Drilling..." << std::endl;
+	if (rand() % 2) {
 		std::cout << "Robotomy " << this->getTarget() << " has been robotomized successfully" << std::endl;
 	} 
 	else {

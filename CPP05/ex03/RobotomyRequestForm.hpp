@@ -3,9 +3,10 @@
 #ifndef ROBOTONOMY_REQUEST_FORM_HPP
 #define ROBOTONOMY_REQUEST_FORM_HPP
 
-# include <iostream>
-# include <ctime>
+#include <ctime>
+#include <cstdlib>
 #include "AForm.hpp"
+
 class RobotomyRequestForm: public AForm {
 	private:
 		std::string _target;

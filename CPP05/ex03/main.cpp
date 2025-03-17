@@ -4,56 +4,61 @@
 #include "Bureaucrat.hpp"
 #include "Intern.hpp"
 
-// int main(void)
-// {
-// 	Intern someRandomIntern;
-// 	AForm* rrf;
-// 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-// }
-int main(void)
-{
+int main(void) {
+    Intern someRandomIntern;
+    Bureaucrat higGgrade("Bob", 2);
+	Bureaucrat lowGrade("Alice", 150);
+    AForm *shPtr = nullptr;
+    AForm *rPtr = nullptr;
+    AForm *pPtr = nullptr;
+
+    try {
+		// Create form within intern
+		std::cout << std::endl << "---------------CREATE FORM---------------" << std::endl;
+        shPtr = someRandomIntern.makeForm("shrubbery creation", "garden");
+        rPtr = someRandomIntern.makeForm("robotomy request", "machina");
+        pPtr = someRandomIntern.makeForm("presidential pardon", "crime");
+    } catch (std::exception &e) {
+        std::cout << "EXCEPTION: Failed to create forms: " << e.what() << std::endl;
+    }
+
+    try {
+        std::cout << std::endl << "---------------SHRUBBERY FORM---------------" << std::endl;
+        higGgrade.signForm(*shPtr);
+        higGgrade.executeForm(*shPtr);
+    } catch (std::exception &e) {
+        std::cout << "EXCEPTION: Error with Shrubbery Form: " << e.what() << std::endl;
+    }
+
+    try {
+		//Invalid: no signature
+		std::cout << std::endl << "---------------ROBOTOMY FORM---------------" << std::endl;
+        higGgrade.executeForm(*rPtr);
+    } catch (std::exception &e) {
+        std::cout << "EXCEPTION: Error with Robotomy Form: " << e.what() << std::endl;
+    }
+
 	try {
-		Intern someRandomIntern;
-		AForm* rrf;
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-		
-		Bureaucrat a("Bob", 2);
-		a.executeForm(*rrf);
+		// Invalid
+        lowGrade.signForm(*pPtr);
+        lowGrade.executeForm(*pPtr);
+    } catch (std::exception &e) {
+        std::cout << "EXCEPTION: Error with Presidential Form: " << e.what() << std::endl;
+    }
 
-		Intern intern;
-		AForm *shPtr = intern.makeForm("shrubbery creation", "yard");
-		AForm *rPtr = intern.makeForm("robotomy request", "robo");
-		AForm *pPtr = intern.makeForm("presidential pardon", "mall");
-		// AForm *wPtr = intern.makeForm("presidential pardon", "");
-		// (void)wPtr;
-		std::cout << std::endl << "SHRUBBERY FORM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-	// Printing and Executing ShrubberyCreationForm through AForm pointer 
-		if (ShrubberyCreationForm *newPtr = dynamic_cast<ShrubberyCreationForm *>(shPtr)) {
-			std::cout << *shPtr << std::endl;
-		} else {
-			std::cout << "Failed to cast AForm* to ShrubberyCreationForm*" << std::endl;
-		}
-		a.signForm(*shPtr);
-		a.executeForm(*shPtr);
-		
-		std::cout << std::endl << "ROBOTOMY FORM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-		// a.signForm(*rPtr);
-		a.executeForm(*rPtr);	
+    try {
+		// Valid
+        std::cout << std::endl << "---------------PRESIDENTIAL FORM---------------" << std::endl;
+        higGgrade.signForm(*pPtr);
+		higGgrade.executeForm(*pPtr);
+    } catch (std::exception &e) {
+        std::cout << "EXCEPTION: Error with Presidential Form: " << e.what() << std::endl;
+    }
 
-		std::cout << std::endl << "PRESIDENTIAL FORM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-		a.signForm(*pPtr);
-		a.executeForm(*pPtr);
+    std::cout << std::endl << "---------------CLEANUP---------------" << std::endl;
+    delete shPtr;
+    delete rPtr;
+    delete pPtr;
 
-		std::cout << std::endl << "DONE ----------------------------------------------------" << std::endl;
-
-		// AForm *sPtr = intern.makeForm("wrong form name", "target");
-		// (void)sPtr;
-		delete shPtr;
-		delete rPtr;
-		delete pPtr;
-	} catch (std::exception &e) {
-		std::cout << std::endl << "<EXCEPTION>: Caught in main(): " << e.what() << std::endl;
-	}
-
-	return 0;
+    return 0;
 }

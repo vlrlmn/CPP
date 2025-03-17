@@ -40,29 +40,26 @@ void ShrubberyCreationForm::setTarget(std::string target) {
 }
 
 void ShrubberyCreationForm::_execute() const {
-	std::string filename = this->getTarget() + "_shrubbery";
-	std::string tree = "\
-				   $$\n\
-			     & && &\n\
-			  &&  & && &&\n\
-			&&& &&  & && &&\n\
-		 & &--&-|& ()|- @, &&\n\
-		&--(-&-&||-& -_-)_&-_&\n\
-	  &() &--&|()|-&-- '% & ()\n\
-	  &_-_&&_- |& |&&-&__%_-_& &&\n\
-	 &&   && & &| &| -& & % ()& -&&\n\
-	 ()&_---()&-&-|&&-&&--%---()~\n\
-	             -|||\n\
-				  |||\n\
-				  |||\n\
-				  |||\n";
+    std::string filename = this->getTarget() + "_shrubbery";
+    std::string tree = "\
+                ,@@@@@@@,\n\
+        ,,,.   ,@@@@@@/@@,  .oo8888o.\n\
+     ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n\
+    ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'\n\
+    %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'\n\
+    %&&%/ %&%%&&@@\\ V /@@' `88\\8 `/88'\n\
+    `&%\\ ` /%&'    |.|        \\ '|8'\n\
+        |o|        | |         | |\n\
+        |.|        | |         | |\n\
+ \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_\n";
 
-	std::ofstream file(filename.c_str());
+    std::ofstream file(filename.c_str());
 
-	if (file.is_open()) {
-		file << tree;
-	} else {
-		std::cout << "Failed to open file" << std::endl;
-	}
+    if (file.is_open()) {
+        file << tree;
+        file.close();
+        std::cout << "Shrubbery created at " << filename << std::endl;
+    } else {
+        std::cout << "Failed to open file " << filename << std::endl;
+    }
 }
-
