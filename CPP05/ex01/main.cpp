@@ -5,7 +5,7 @@ int main()
 {
     try
     {
-        std::cout << "FORM CREATION" << std::endl;
+        std::cout << "---------------FORM CREATION---------------" << std::endl;
         Bureaucrat bob("Bob", 10);
         std::cout << bob << std::endl;
         Form form1("form1", 3, 5);
@@ -20,20 +20,20 @@ int main()
         Form form6("", 5, 5);
         
         // Form signment tests
-        std::cout << "\nALICE SIGNING FORM (enough grade)" << std::endl;
+        std::cout << std::endl << "---------------ALICE SIGNING FORM (enough grade)---------------" << std::endl;
         Bureaucrat alice("Alice", 1);
         std::cout << alice << std::endl;
-        std::cout << "\n---BEFORE SIGNMENT" << std::endl;
+        std::cout << std::endl << "---BEFORE SIGNMENT" << std::endl;
         std::cout << form1 << std::endl;
         alice.signForm(form1);
-        std::cout << "\n---AFTER SIGNMENT" << std::endl;
+        std::cout << std::endl << "---AFTER SIGNMENT" << std::endl;
         std::cout << form1 << std::endl;
         alice.signForm(form1);
-        std::cout << "\nBOB SIGNING FORM (not enough grade)" << std::endl;
+        std::cout << std::endl << "---------------BOB SIGNING FORM (not enough grade)---------------" << std::endl;
         bob.signForm(form1);
     }
     catch (std::exception & e)
     {
-        std::cout << "Exception: " << e.what() << std::endl;
+        std::cout << "EXCEPTION: " << e.what() << std::endl;
     }
 }
