@@ -13,7 +13,13 @@
 int main(void)
 {
 	try {
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		
 		Bureaucrat a("Bob", 2);
+		a.executeForm(*rrf);
+
 		Intern intern;
 		AForm *shPtr = intern.makeForm("shrubbery creation", "yard");
 		AForm *rPtr = intern.makeForm("robotomy request", "robo");

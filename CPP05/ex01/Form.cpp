@@ -31,7 +31,7 @@ Form& Form::operator=(const Form &original) {
 }
 
 Form::~Form() {
-     std::cout << "Destructor called" <<std::endl;
+     std::cout << "Destructor called Form" <<std::endl;
 }
 
 std::string Form::getName(void) const {

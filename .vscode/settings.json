@@ -77,6 +77,14 @@
 		"span": "cpp",
 		"thread": "cpp",
 		"filesystem": "cpp",
-		"stop_token": "cpp"
+		"stop_token": "cpp",
+		"charconv": "cpp",
+		"clocale": "cpp",
+		"condition_variable": "cpp",
+		"execution": "cpp",
+		"numbers": "cpp",
+		"print": "cpp",
+		"numeric": "cpp",
+		"text_encoding": "cpp"
 	}
 }
