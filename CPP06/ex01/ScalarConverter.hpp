@@ -5,14 +5,17 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <cctype>
 
 class ScalarConverter {
-	public:
+	private:
 		ScalarConverter(); 
 		ScalarConverter(const ScalarConverter &original);
 		ScalarConverter &operator=(const ScalarConverter &original);
 		~ScalarConverter();
-		static void convert(std::string literal);
+	public:
+		static void convert(const std::string literal);
 };
 
 #endif
