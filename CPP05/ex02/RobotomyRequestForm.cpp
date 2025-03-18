@@ -43,7 +43,7 @@ void RobotomyRequestForm::_execute() const {
 
 	srand(static_cast<unsigned int>(time(NULL)));
 	
-	std::cout << "Drilling..." << std::endl;
+	std::cout << "~~~~~Drilling...~~~~~" << std::endl;
 	if (rand() % 2) {
 		std::cout << "Robotomy " << this->getTarget() << " has been robotomized successfully" << std::endl;
 	} 

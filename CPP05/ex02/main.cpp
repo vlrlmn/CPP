@@ -55,6 +55,13 @@ int main() {
         }
 
         try {
+            highRank.signForm(*rPtr);
+            highRank.executeForm(*rPtr);
+        } catch (const std::exception& e) {
+            std::cout << "EXCEPTION! Executing unsigned Robotomy: " << e.what() << std::endl;
+        }
+
+        try {
             highRank.signForm(*pPtr);
             highRank.executeForm(*pPtr);
         } catch (const std::exception& e) {
