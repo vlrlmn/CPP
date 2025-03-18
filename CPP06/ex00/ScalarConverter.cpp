@@ -34,7 +34,18 @@ void convertFloat(const std::string literal) {
 	std::cout << "double: " << std::fixed << std::cout.precision(1) << static_cast<double>(num) << std::endl;
 }
 
+void convertPseudo(const std::string literal) {
+
+}
+
+bool isPseudo(const std::string literal)
+{
+	return (literal == "-inff" || literal == "+inff" || literal == "nanf");
+}
 void ScalarConverter::convert(const std::string literal) {
+
+	if (isPseudo(literal))
+		convertPseudo(literal);
 	std::string::const_iterator it;
 	for (it = literal.begin(); it != literal.end(); ++it)
 	{
