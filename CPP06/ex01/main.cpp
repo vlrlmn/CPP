@@ -27,7 +27,7 @@ int main() {
 
     std::cout << std::endl << "---------CHECK OF COINSISING----------"<< std::endl;
     if (deserialized == &original) {
-        std::cout << "Deserialization successful! Addresses match." << std::endl;
+        std::cout << "Deserialization successful. Addresses match." << std::endl;
     } else {
         std::cout << std::endl << "Deserialization failed! Addresses do not match." << std::endl;
     }
