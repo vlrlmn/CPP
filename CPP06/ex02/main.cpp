@@ -49,14 +49,11 @@ void identify(Base& p) {
 
     try {
         (void)dynamic_cast<C&>(p);
-        std::cout << "B" << std::endl;
+        std::cout << "C" << std::endl;
         return;
     } catch (std::bad_cast &) {}
 
 }
-
-#include "Base.hpp"
-#include <iostream>
 
 int main() {
     Base* obj = generate(); 
