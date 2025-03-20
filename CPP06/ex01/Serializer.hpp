@@ -4,13 +4,13 @@
 #define SERIALIZER_HPP
 
 #include <iostream>
-#include <string>
+#include <cstdint>
 
 struct Data
 {
-    int         n;
-    std::string s1;
-    std::string s2;
+    std::string name;
+    int age;
+    float height;
 };
 
 class Serializer {
