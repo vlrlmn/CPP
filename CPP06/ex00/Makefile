@@ -1,7 +1,7 @@
-NAME = bureaucrat
+NAME = converter
 
 SRC = 	main.cpp \
-		Bureaucrat.cpp \
+		ScalarConverter.cpp \
 
 CXX = c++
 

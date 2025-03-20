@@ -8,15 +8,20 @@
 #include <cstdlib>
 #include <cctype>
 #include <stdlib.h>
+#include <limits>
+#include <cerrno>
+#include <iomanip>
+#include <float.h>
 
 class ScalarConverter {
 	private:
 		ScalarConverter(); 
-		ScalarConverter(const ScalarConverter &original);
-		ScalarConverter &operator=(const ScalarConverter &original);
 		~ScalarConverter();
 	public:
 		static void convert(const std::string &literal);
+		static void printValues(double value, bool isPseudo);
+		static bool isPseudo(const std::string &literal);
+		static bool isChar(const std::string &literal);
 };
 
 #endif
