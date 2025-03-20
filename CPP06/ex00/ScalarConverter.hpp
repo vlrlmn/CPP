@@ -12,7 +12,6 @@
 #include <cerrno>
 #include <iomanip>
 #include <float.h>
-#include <algorithm>
 
 class ScalarConverter {
 	private:

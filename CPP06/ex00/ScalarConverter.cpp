@@ -25,7 +25,10 @@ void ScalarConverter::convert(const std::string &literal) {
 		return; 
 	}
 	std::string tempLiteral = literal;
-    std::transform(tempLiteral.begin(), tempLiteral.end(), tempLiteral.begin(), ::tolower);
+	for(size_t i = 0; tempLiteral[i]; i++) {
+		if (std::isupper(tempLiteral[i]))
+			tempLiteral[i] = std::tolower(tempLiteral[i]);
+	}
 
 	if (isPseudo(tempLiteral)) {
 		double value = std::strtod(tempLiteral.c_str(), NULL);
@@ -36,7 +39,6 @@ void ScalarConverter::convert(const std::string &literal) {
 			printValues(value, isFloat);
 		return;
 	}
-	
 
 	char *endPtr;
 	errno = 0;
