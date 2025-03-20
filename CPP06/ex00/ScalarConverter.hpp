@@ -7,11 +7,10 @@
 #include <string>
 #include <cstdlib>
 #include <cctype>
-#include <stdlib.h>
 #include <limits>
 #include <cerrno>
 #include <iomanip>
-#include <float.h>
+#include <cfloat>
 
 class ScalarConverter {
 	private:
