@@ -4,7 +4,7 @@
 #include "C.hpp"
 
 Base *generate() {
-    srand(time(NULL));
+
     int r = rand() % 3;
 
     switch(r) {
@@ -20,7 +20,7 @@ Base *generate() {
         default:
             break;
     }
-    return new Base();
+    return nullptr;
 }
 
 void identify(Base* p) {
@@ -56,6 +56,7 @@ void identify(Base& p) {
 }
 
 int main() {
+    srand(time(NULL));
     Base* obj = generate(); 
 
     std::cout << "Identify by pointer: ";
