@@ -9,7 +9,6 @@ ScalarConverter::~ScalarConverter() {
 }
 
 bool ScalarConverter::isPseudo(const std::string &literal) {
-	// literal = tolower(literal);
     return (literal == "-inf" || literal == "+inf" || literal == "-inff" 
             || literal == "+inff" || literal == "nan" || literal == "nanf");
 }
@@ -20,26 +19,34 @@ bool ScalarConverter::isChar(const std::string &literal) {
 }
 
 void ScalarConverter::convert(const std::string &literal) {
-	if (isPseudo(literal)) {
-		double value = std::strtod(literal.c_str(), NULL);
-		bool isFloat = (literal == "+inff" || literal == "-inff" || literal == "nanf" || literal == "+inf" || literal == "-inf");
-		if (literal == "+inff" || literal == "-inff" || literal == "nanf")
+	if (isChar(literal))
+	{
+		printValues(static_cast<double>(literal[0]), false);
+		return; 
+	}
+	std::string tempLiteral = literal;
+    std::transform(tempLiteral.begin(), tempLiteral.end(), tempLiteral.begin(), ::tolower);
+
+	if (isPseudo(tempLiteral)) {
+		double value = std::strtod(tempLiteral.c_str(), NULL);
+		bool isFloat = (tempLiteral == "+inff" || tempLiteral == "-inff" || tempLiteral == "nanf" || tempLiteral == "+inf" || tempLiteral == "-inf");
+		if (tempLiteral == "+inff" || tempLiteral == "-inff" || tempLiteral == "nanf")
 			printValues(value, isFloat);
 		else
 			printValues(value, isFloat);
 		return;
 	}
 	
-	if (isChar(literal))
-	{
-		printValues(static_cast<double>(literal[0]), false);
-		return; 
-	}
 
 	char *endPtr;
 	errno = 0;
-	double value = std::strtod(literal.c_str(), &endPtr);
-	
+	long double lvalue = std::strtod(literal.c_str(), &endPtr);
+	if (errno == ERANGE || lvalue == HUGE_VAL || lvalue == -HUGE_VAL 
+		|| lvalue == -HUGE_VALL || lvalue == HUGE_VALL|| lvalue == -HUGE_VALF|| lvalue == HUGE_VALF) {
+		std::cerr << "Error: overflow or underflow" << std::endl;
+		return;
+	}
+	double value = static_cast<double>(lvalue); 
     if (*endPtr == 'f') {
 		if (literal.find('.') == std::string::npos)
 		{
@@ -55,13 +62,6 @@ void ScalarConverter::convert(const std::string &literal) {
 	if (errno == ERANGE || value > DBL_MAX || value < -DBL_MAX) {
 		std::cerr << "Error: overflow or underflow" << std::endl;
 		return ;
-	}
-	if (errno == ERANGE && (value == HUGE_VAL || value == -HUGE_VAL)) {
-		std::cerr << "Error: overflow or underflow" << std::endl;
-		return;
-	}
-	if (value > FLT_MAX || value < -FLT_MAX) {
-		std::cout << "float: impossible" << std::endl;
 	}
 	printValues(value, false);
 }
@@ -105,13 +105,13 @@ void ScalarConverter::printValues(double value, bool isPseudo) {
 	}
 	
 	//Float
+	std::cout << std::fixed << std::setprecision(1);
 	if (value > FLT_MAX || value < -FLT_MAX)
 		std::cout << "float: impossible" << std::endl;
 	else {
-		std::cout << std::fixed << std::setprecision(1);
 		std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
 	}
-	
+
 	//Double
 	std::cout << "double: " << value << std::endl;
 }
