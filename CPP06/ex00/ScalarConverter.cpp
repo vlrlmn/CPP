@@ -23,10 +23,11 @@ bool ScalarConverter::isChar(const std::string &literal) {
 void ScalarConverter::convert(const std::string &literal) {
 	if (isPseudo(literal)) {
 		double value = std::strtod(literal.c_str(), NULL);
+		bool isFloat = (literal == "+inff" || literal == "-inff" || literal == "nanf" || literal == "+inf" || literal == "-inf");
 		if (literal == "+inff" || literal == "-inff" || literal == "nanf")
-			printValues(value, true);
+			printValues(value, isFloat);
 		else
-			printValues(value, false);
+			printValues(value, isFloat);
 		return;
 	}
 	
@@ -53,9 +54,12 @@ void ScalarConverter::convert(const std::string &literal) {
         std::cerr << "Invalid input" << std::endl;
         return;
     }
-	if (errno == ERANGE) {
+	if (errno == ERANGE || value > DBL_MAX || value < -DBL_MAX) {
 		std::cerr << "Error: overflow or underflow" << std::endl;
 		return ;
+	}
+	if (value > FLT_MAX || value < -FLT_MAX) {
+		std::cerr << "float: impossible" << std::endl;
 	}
 	printValues(value, false);
 }
