@@ -38,10 +38,13 @@ TEST_CASES=(
     "-infffff"
     "inf!"
     "!inf"
+    "NAN"
+    "+INF"
+    "+iNF"
     "+332423"
 )
 
-echo "🔍 Running tests..."
+echo " Running tests..."
 for TEST in "${TEST_CASES[@]}"; do
     echo "----------------------------------"
     echo " [ Testing: ./converter \"$TEST\" ] "
