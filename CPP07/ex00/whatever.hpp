@@ -6,7 +6,7 @@
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:51:20 by vlomakin          #+#    #+#             */
-/*   Updated: 2025/03/21 16:04:31 by vlomakin         ###   ########.fr       */
+/*   Updated: 2025/03/21 16:08:44 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 template <typename T>
-T swap(const T& a, const T& b) {
+T min(const T& a, const T& b) {
     if (a < b) {
         return a;
     } else {
@@ -34,7 +34,7 @@ T max(const T& a, const T& b) {
 }
 
 template <typename T>
-T min(const T& a, const T& b) {
+T swap(T& a, T& b) {
     T temp;
 
 	temp = a;
