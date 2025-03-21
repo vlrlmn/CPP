@@ -6,12 +6,11 @@
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:53:56 by vlomakin          #+#    #+#             */
-/*   Updated: 2025/03/21 15:55:36 by vlomakin         ###   ########.fr       */
+/*   Updated: 2025/03/21 16:03:55 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
-
 
 int main( void ) 
 {
