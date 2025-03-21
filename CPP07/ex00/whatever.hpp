@@ -6,7 +6,7 @@
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:51:20 by vlomakin          #+#    #+#             */
-/*   Updated: 2025/03/21 16:08:44 by vlomakin         ###   ########.fr       */
+/*   Updated: 2025/03/21 16:50:06 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ T swap(T& a, T& b) {
 	temp = a;
 	a = b;
 	b = temp;
+    return temp;
 }
 
 #endif

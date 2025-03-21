@@ -6,11 +6,11 @@
 #    By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 15:53:59 by vlomakin          #+#    #+#              #
-#    Updated: 2025/03/21 16:07:05 by vlomakin         ###   ########.fr        #
+#    Updated: 2025/03/21 16:50:37 by vlomakin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = converter
+NAME = whatever
 
 SRC = 	main.cpp \
 
