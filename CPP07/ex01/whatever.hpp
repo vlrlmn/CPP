@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   B.hpp                                              :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 15:52:01 by vlomakin          #+#    #+#             */
-/*   Updated: 2025/03/21 15:52:02 by vlomakin         ###   ########.fr       */
+/*   Created: 2025/03/21 15:51:20 by vlomakin          #+#    #+#             */
+/*   Updated: 2025/03/21 15:51:21 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
-#ifndef B_HPP
-#define B_HPP
-
-#include "Base.hpp"
-
-class B : public Base {
-
-};
 
 #endif
