@@ -11,12 +11,9 @@ void iter(T* const arr, const int len, void(*const f)(T const &)) {
     }
 }
 
-void printInt(int const &x) {
-    std::cout << x << std::endl;
-}
-
-void printString(std::string const &str) {
-    std::cout << str << std::endl;
+template<typename T>
+void printTemplate(T const &value) {
+    std::cout << value << std::endl;
 }
 
 #endif
