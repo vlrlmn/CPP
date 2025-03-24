@@ -21,7 +21,6 @@ int main() {
     floatArr[0] = 3.14f;
     floatArr[1] = 2.71f;
     floatArr[2] = 1.41f;
-    std::cout << "FLOAT array (dynamic):\n";
     iter(floatArr, 3, printTemplate);
     delete[] floatArr;
     return 0;

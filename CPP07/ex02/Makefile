@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+         #
+#    By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 15:53:59 by vlomakin          #+#    #+#              #
-#    Updated: 2025/03/21 16:52:14 by vlomakin         ###   ########.fr        #
+#    Updated: 2025/03/24 18:18:50 by lomakinaval      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = iter
+NAME = arr
 
 SRC = 	main.cpp \
 
