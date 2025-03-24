@@ -5,6 +5,8 @@
 
 template<typename T>
 void iter(T* const arr, const int len, void(*const f)(T const &)) {
+    if (!arr || !f || len < 0)
+        return;
     for (int i = 0; i < len; i++)
     {
         f(arr[i]);

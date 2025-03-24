@@ -16,5 +16,13 @@ int main() {
     std::cout << std::endl << "----TEST5-----" << std::endl;
     float fNumbers[] = {1.1, 2.2, 3.3, 4.4, 5.5};
     ::iter(fNumbers, 5, printTemplate);
+    std::cout << std::endl << "----TEST6-----" << std::endl;
+    float* floatArr = new float[3];
+    floatArr[0] = 3.14f;
+    floatArr[1] = 2.71f;
+    floatArr[2] = 1.41f;
+    std::cout << "FLOAT array (dynamic):\n";
+    iter(floatArr, 3, printTemplate);
+    delete[] floatArr;
     return 0;
 }
