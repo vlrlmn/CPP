@@ -1,6 +1,11 @@
 #include "Iter.hpp"
 
 int main() {
+
+    int* arr = new int[3];
+    std::cout << std::endl << "----TEST0-----" << std::endl;
+    ::iter(arr, 3, printTemplate);
+
     int numbers[] = {1, 2, 3, 4, 5};
     std::string words[] = {"hello", "world", "template"};
     std::string words2[] = {"", "world", "template"};
