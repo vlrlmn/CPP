@@ -86,6 +86,7 @@
 		"print": "cpp",
 		"numeric": "cpp",
 		"text_encoding": "cpp",
-		"*.tpp": "cpp"
+		"*.tpp": "cpp",
+		"forward_list": "cpp"
 	}
 }
