@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:51:20 by vlomakin          #+#    #+#             */
-/*   Updated: 2025/03/21 16:50:06 by vlomakin         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:24:31 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# pragma once
 
 #ifndef WHATEVER_HPP
 #define WHATEVER_HPP

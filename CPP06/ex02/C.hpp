@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:52:10 by vlomakin          #+#    #+#             */
-/*   Updated: 2025/03/21 15:52:11 by vlomakin         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:24:20 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# pragma once
 
 #ifndef C_HPP
 #define C_HPP

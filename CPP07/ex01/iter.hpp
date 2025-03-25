@@ -6,9 +6,11 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 13:03:46 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/25 13:03:47 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/03/25 17:24:43 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# pragma once
 
 #ifndef ITER_HPP
 #define ITER_HPP

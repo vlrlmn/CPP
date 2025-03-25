@@ -6,9 +6,11 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 13:03:36 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/25 13:03:37 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/03/25 17:24:50 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# pragma once
 
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
