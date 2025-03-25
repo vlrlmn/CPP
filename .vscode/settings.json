@@ -85,6 +85,7 @@
 		"numbers": "cpp",
 		"print": "cpp",
 		"numeric": "cpp",
-		"text_encoding": "cpp"
+		"text_encoding": "cpp",
+		"*.tpp": "cpp"
 	}
 }
