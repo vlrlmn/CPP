@@ -8,18 +8,20 @@
 #include <deque>
 
 template <typename T,  typename Container = std::stack<T> >
-class MutantStack {
+class MutantStack :  {
 	private:
 		std::stack<int> _nums;
 		size_t _stackSize;
+		int top;
+		T* stackPtr;
 	public:
 		MutantStack();
 		~MutantStack();
 		MutantStack(MutantStack &other);
 		MutantStack &operator=(MutantStack &other);
 
-		void push();
-		void pop();
+		void push(const &T);
+		void pop(T&);
 		size_t size();
 		void top();
 
