@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 13:03:27 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/25 13:03:28 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/03/26 15:18:20 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,5 +121,7 @@ int main() {
     testOutOfBounds();
     testCopyAndAssignPointerRef();
 
+    int *a = new int[3];
+    std::cout << a[0] << std::endl;
     return 0;
 }
