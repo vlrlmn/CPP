@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 17:24:58 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/25 18:49:05 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/03/26 11:42:41 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 #include <stdexcept>
 #include <vector>
 #include <algorithm>
+#include <list>
+#include <deque>
+
 
 class Span {
     private:
@@ -37,7 +40,7 @@ class Span {
         template <typename Iterator>
         void addNumber(Iterator begin, Iterator end) {
             if (_nums.size() + std::distance(begin, end) > _maxNums)
-                throw std::out_of_range("Not enough space");
+                throw std::length_error("Numbers cannot be added. Not enough space.");
             _nums.insert(_nums.end(), begin, end);
         }
 
