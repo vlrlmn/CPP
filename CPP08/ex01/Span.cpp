@@ -6,7 +6,7 @@
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 18:42:59 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/26 12:42:00 by vlomakin         ###   ########.fr       */
+/*   Updated: 2025/03/26 12:59:47 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ Span& Span::operator=(Span &other) {
 }
 
 Span::~Span() {}
+
+void Span::printContent() const {
+    for (std::vector<int>::const_iterator it = _nums.begin(); it != _nums.end(); ++it)
+        std::cout << *it << std::endl;
+}
 
 void Span::addNumber(int number) {
     if (_nums.size() > _maxNums)

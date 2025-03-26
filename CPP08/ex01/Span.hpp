@@ -6,7 +6,7 @@
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 17:24:58 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/26 12:42:06 by vlomakin         ###   ########.fr       */
+/*   Updated: 2025/03/26 12:59:11 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class Span {
 
         int shortestSpan() const;
         int longestSpan() const;
-
+        void printContent() const;
 };
 
 #endif

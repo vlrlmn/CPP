@@ -8,6 +8,7 @@ int main() {
         bigSpan.addNumber(rand());
     }
     std::cout << "SUCCESS! Added values." << std::endl;
+
     std::cout << std::endl << "~~~Large span2~~~" << std::endl;
     std::vector<int> v(10000);
     try {
@@ -24,7 +25,7 @@ int main() {
     fixed.addNumber(17);
     fixed.addNumber(9);
     fixed.addNumber(11);
-
+    fixed.printContent();
     std::cout << "SUCCESS! Shortest span: " << fixed.shortestSpan() << std::endl;
     std::cout << "SUCCESS! Longest span: " << fixed.longestSpan() << std::endl;
 
@@ -39,6 +40,7 @@ int main() {
         sp.addNumber(lst.begin(), lst.end());
         sp.addNumber(dq.begin(), dq.end());
         sp.addNumber(arr, arr + 3);
+        sp.printContent();
         std::cout << "SUCCESS! Numbers added." << std::endl;
     } catch (std::exception &e) {
         std::cout << "FAIL! " << e.what() << std::endl;
@@ -75,10 +77,12 @@ int main() {
     } catch (const std::exception &e) {
         std::cout << "FAIL! longestSpan(): " << e.what() << std::endl;
     }
+
     std::cout << std::endl << "~~~Two numbers~~~" << std::endl;
     Span twoNums(1);
     twoNums.addNumber(42);
     twoNums.addNumber(41);
+    twoNums.printContent();
     std::cout << "SUCCESS! Shortest span: " << twoNums.shortestSpan() << std::endl;
     std::cout << "SUCCESS! Longest span: " << twoNums.longestSpan() << std::endl;
 
@@ -86,6 +90,7 @@ int main() {
     Span eqNums(1);
     eqNums.addNumber(42);
     eqNums.addNumber(42);
+    eqNums.printContent();
     std::cout << "SUCCESS! Shortest span: "  << eqNums.shortestSpan() << std::endl;
     std::cout << "SUCCESS! Longest span: " << eqNums.longestSpan() << std::endl;
 }
