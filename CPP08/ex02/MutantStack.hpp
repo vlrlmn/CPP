@@ -7,8 +7,8 @@
 #include <list>
 #include <deque>
 
-template <typename T,  typename Container = std::stack<T> >
-class MutantStack :  {
+template< class T, class Container = std::deque<T> >
+class MutantStack : {
 	private:
 		std::stack<int> _nums;
 		size_t _stackSize;
