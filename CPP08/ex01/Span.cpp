@@ -6,7 +6,7 @@
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 18:42:59 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/26 11:45:55 by vlomakin         ###   ########.fr       */
+/*   Updated: 2025/03/26 11:54:37 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int Span::shortestSpan() const {
 
     std::sort(tmp.begin(), tmp.end());
     int minSpan = tmp[1] - tmp[0];
-    for(int i = 1; i < tmp.size() - 1; i++) {
+    for(unsigned int i = 1; i < tmp.size() - 1; i++) {
         int span = tmp[i + 1] - tmp[i];
         if (span < minSpan) 
             minSpan = span; 
@@ -58,8 +58,8 @@ int Span::longestSpan() const {
     int minVal;
     int maxVal;
 
-    maxVal = *std::min_element(_nums.begin(), _nums.end());
+    minVal = *std::min_element(_nums.begin(), _nums.end());
     maxVal = *std::max_element(_nums.begin(), _nums.end());
   
-    return maxVal - maxVal;
+    return maxVal - minVal;
 }

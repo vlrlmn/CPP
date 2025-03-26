@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+         #
+#    By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 15:53:59 by vlomakin          #+#    #+#              #
-#    Updated: 2025/03/25 16:47:38 by lomakinaval      ###   ########.fr        #
+#    Updated: 2025/03/26 11:55:37 by vlomakin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind
+NAME = span
 
 SRC = 	main.cpp \
+		Span.cpp \
 
 CXX = c++
 
