@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 16:48:37 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/25 17:19:15 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/03/27 21:45:46 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <stdexcept>
 #include <vector>
 #include <list>
-#include <deque> 
+#include <deque>
 
 template<typename T>
 typename T::iterator easyfind(T& container, int value) {

@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 19:36:31 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/27 19:36:32 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/03/27 21:58:53 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,8 +121,6 @@ void testEqualNumbers() {
     std::cout << "SUCCESS! Shortest span: "  << eqNums.shortestSpan() << std::endl;
     std::cout << "SUCCESS! Longest span: " << eqNums.longestSpan() << std::endl;
 }
-
-// Дополнительный тест с пользовательским классом
 class MyNumber {
 public:
     int value;
