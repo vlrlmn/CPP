@@ -6,31 +6,27 @@
 #include <vector>
 #include <list>
 #include <deque>
+#include <algorithm>
 
 template< class T, class Container = std::deque<T> >
-class MutantStack : {
-	private:
-		std::stack<int> _nums;
-		size_t _stackSize;
-		int top;
-		T* stackPtr;
+class MutantStack : public std::stack<T, Container> {
 	public:
 		MutantStack();
 		~MutantStack();
-		MutantStack(MutantStack &other);
-		MutantStack &operator=(MutantStack &other);
+		MutantStack(const MutantStack &other);
+		MutantStack &operator=(const MutantStack &other);
 
-		void push(const &T);
-		void pop(T&);
-		size_t size();
-		void top();
+		typedef typename std::stack<T, Container>::container_type container_type;
+		typedef typename container_type::iterator iterator;
 
-};
-
-template<typename T>
-typename T::iterator easyfind() {
+		typedef typename std::stack<T, Container>::container_type container_type;
+		typedef typename container_type::const_iterator const_iterator;
 	
-}
+		iterator begin();
+		iterator end();
+		const_iterator begin() const;
+		const_iterator end() const;
+};
 
 #include "MutantStack.tpp"
 
