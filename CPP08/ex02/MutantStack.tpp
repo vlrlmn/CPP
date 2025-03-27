@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MutantStack.tpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/27 19:41:00 by lomakinaval       #+#    #+#             */
+/*   Updated: 2025/03/27 19:50:06 by lomakinaval      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "MutantStack.hpp"
 template <typename T, class Container>
 MutantStack<T, Container>::MutantStack() {}
@@ -6,15 +18,15 @@ template <typename T, class Container>
 MutantStack<T, Container>::~MutantStack() {}
 
 template <typename T, class Container>
-MutantStack<T, Container>::MutantStack(const MutantStack &other):
-                std::stack<T, Container>(other) {
-
+MutantStack<T, Container>::MutantStack(const MutantStack &other) {
+    this->c = other.c;
 }
 
 template <typename T, class Container>
 MutantStack<T, Container>& MutantStack<T, Container>::operator=(const MutantStack &other) {
-    if (this != &other)
-        std::stack<T, Container>::operator=(other);
+    if (this != &other) {
+        this->c = other.c;
+    }
     return *this;
 }
 

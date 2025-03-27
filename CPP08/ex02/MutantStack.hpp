@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/27 19:40:57 by lomakinaval       #+#    #+#             */
+/*   Updated: 2025/03/27 21:05:45 by lomakinaval      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MUTANT_STACK_HPP
 #define MUTANT_STACK_HPP
 
@@ -19,7 +31,7 @@ class MutantStack : public std::stack<T, Container> {
 		typedef typename std::stack<T, Container>::container_type container_type;
 		typedef typename container_type::iterator iterator;
 
-		typedef typename std::stack<T, Container>::container_type container_type;
+		// typedef typename std::stack<T, Container>::container_type container_type;
 		typedef typename container_type::const_iterator const_iterator;
 	
 		iterator begin();
