@@ -18,7 +18,7 @@ template <typename T, class Container>
 MutantStack<T, Container>::~MutantStack() {}
 
 template <typename T, class Container>
-MutantStack<T, Container>::MutantStack(const MutantStack &other) {
+MutantStack<T, Container>::MutantStack(const MutantStack &other):  std::stack<T, Container>(other) {
     this->c = other.c;
 }
 
