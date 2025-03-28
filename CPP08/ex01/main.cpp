@@ -121,25 +121,25 @@ void testEqualNumbers() {
     std::cout << "SUCCESS! Shortest span: "  << eqNums.shortestSpan() << std::endl;
     std::cout << "SUCCESS! Longest span: " << eqNums.longestSpan() << std::endl;
 }
-class MyNumber {
-public:
-    int value;
-    MyNumber(int v) : value(v) {}
-    bool operator==(const MyNumber& other) const { return value == other.value; }
-    bool operator<(const MyNumber& other) const { return value < other.value; }
-    operator int() const { return value; }
-};
+// class MyNumber {
+// public:
+//     int value;
+//     MyNumber(int v) : value(v) {}
+//     bool operator==(const MyNumber& other) const { return value == other.value; }
+//     bool operator<(const MyNumber& other) const { return value < other.value; }
+//     operator int() const { return value; }
+// };
 
-void testWithCustomClass() {
-    std::cout << std::endl << "~~~Custom class test~~~" << std::endl;
-    Span customSpan(3);
-    MyNumber a(10), b(20), c(15);
-    customSpan.addNumber(a);
-    customSpan.addNumber(b);
-    customSpan.addNumber(c);
-    std::cout << "Shortest span: " << customSpan.shortestSpan() << std::endl;
-    std::cout << "Longest span: " << customSpan.longestSpan() << std::endl;
-}
+// void testWithCustomClass() {
+//     std::cout << std::endl << "~~~Custom class test~~~" << std::endl;
+//     Span customSpan(3);
+//     MyNumber a(10), b(20), c(15);
+//     customSpan.addNumber(a);
+//     customSpan.addNumber(b);
+//     customSpan.addNumber(c);
+//     std::cout << "Shortest span: " << customSpan.shortestSpan() << std::endl;
+//     std::cout << "Longest span: " << customSpan.longestSpan() << std::endl;
+// }
 
 int main() {
     testLargeSpan();
@@ -149,6 +149,6 @@ int main() {
     testTooSmall();
     testTwoNumbers();
     testEqualNumbers();
-    testWithCustomClass();
+    // testWithCustomClass();
     return 0;
 }

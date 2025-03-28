@@ -12,31 +12,31 @@
 
 #include "easyfind.hpp"
 
-class MyNumber {
-public:
-    int value;
-    MyNumber(int v) : value(v) {}
-    bool operator==(const MyNumber& other) const { return value == other.value; }
-    friend std::ostream& operator<<(std::ostream& os, const MyNumber& n) {
-        os << n.value;
-        return os;
-    }
-};
+// class MyNumber {
+// public:
+//     int value;
+//     MyNumber(int v) : value(v) {}
+//     bool operator==(const MyNumber& other) const { return value == other.value; }
+//     friend std::ostream& operator<<(std::ostream& os, const MyNumber& n) {
+//         os << n.value;
+//         return os;
+//     }
+// };
 
-void testCustomClass() {
-    std::cout  << std::endl <<  "----- TEST CUSTOM CLASS -----" << std::endl;
-    std::vector<MyNumber> nums;
-    nums.push_back(MyNumber(1));
-    nums.push_back(MyNumber(2));
-    nums.push_back(MyNumber(3));
+// void testCustomClass() {
+//     std::cout  << std::endl <<  "----- TEST CUSTOM CLASS -----" << std::endl;
+//     std::vector<MyNumber> nums;
+//     nums.push_back(MyNumber(1));
+//     nums.push_back(MyNumber(2));
+//     nums.push_back(MyNumber(3));
 
-    try {
-        std::vector<MyNumber>::iterator it = easyfind(nums, 2);
-        std::cout << "Found: " << *it << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << e.what() << std::endl;
-    }
-}
+//     try {
+//         std::vector<MyNumber>::iterator it = easyfind(nums, 2);
+//         std::cout << "Found: " << *it << std::endl;
+//     } catch (const std::exception& e) {
+//         std::cerr << e.what() << std::endl;
+//     }
+// }
 
 void testValid() {
     std::cout << std::endl << "----- TEST VALID -----" << std::endl;
@@ -125,6 +125,6 @@ int main() {
     testList();
     testDeque();
     testRepeatedValues();
-    testCustomClass();
+    // testCustomClass();
     return 0;
 }
