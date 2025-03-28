@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.tpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 19:41:00 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/27 19:50:06 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/03/28 12:11:29 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

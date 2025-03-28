@@ -3,14 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 19:45:52 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/27 21:37:02 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/03/28 12:54:59 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+void testConstIterator() {
+    std::cout << "\n--- CONST ITERATOR TEST ---" << std::endl;
+
+    MutantStack<int> mstack;
+    mstack.push(10);
+    mstack.push(20);
+    mstack.push(30);
+
+    const MutantStack<int> constStack = mstack;
+    MutantStack<int>::const_iterator it = constStack.begin();
+    MutantStack<int>::const_iterator ite = constStack.end();
+
+    std::cout << "Content: ";
+    while (it != ite) {
+        std::cout << *it << " ";
+        ++it;
+    }
+    std::cout << std::endl;
+}
 
 void subjectTest() {
     std::cout << "\n--- BASIC USAGE TEST ---" << std::endl;
@@ -60,7 +79,8 @@ void testWithStrings() {
 void testCopyAndAssignment() {
     std::cout << "\n--- COPY & ASSIGNMENT TEST ---" << std::endl;
     MutantStack<int> original;
-    for (int i = 0; i < 5; ++i) original.push(i);
+    for (int i = 0; i < 5; ++i) 
+        original.push(i);
 
     MutantStack<int> copy(original);
     MutantStack<int> assigned;
@@ -90,10 +110,27 @@ void testComparisonToList() {
     }
 }
 
+void testDoubleComparisonToList() {
+    std::cout << "\n--- COMPARISON TO LIST DOUBLE TYPE ---" << std::endl;
+    std::list<double> lst;
+    lst.push_back(3.5);
+    lst.push_back(5.5);
+    lst.push_back(737.5);
+    lst.push_back(0.0);
+
+    for (std::list<double>::iterator it = lst.begin(); it != lst.end(); ++it) {
+        std::cout << *it << std::endl;
+    }
+}
+
+
 int main() {
+    testConstIterator();
     subjectTest();
     testWithStrings();
     testCopyAndAssignment();
     testComparisonToList();
+    testDoubleComparisonToList();
+
     return 0;
 }
