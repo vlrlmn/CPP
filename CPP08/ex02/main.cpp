@@ -6,7 +6,7 @@
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 19:45:52 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/28 12:54:59 by vlomakin         ###   ########.fr       */
+/*   Updated: 2025/03/28 12:56:17 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,6 @@ void testDoubleComparisonToList() {
         std::cout << *it << std::endl;
     }
 }
-
 
 int main() {
     testConstIterator();
