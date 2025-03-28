@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 19:36:31 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/27 21:58:53 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/03/28 12:03:54 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void testFixedSpan() {
 }
 
 void testVariousIterators() {
-    std::cout << std::endl << "~~~Different types of iterator~~~" << std::endl;
+    std::cout << std::endl << "~~~Different containers types~~~" << std::endl;
     Span sp(20);
     std::vector<int> vec;
     std::list<int> lst;

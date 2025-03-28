@@ -6,7 +6,7 @@
 /*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 18:42:59 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/26 12:59:47 by vlomakin         ###   ########.fr       */
+/*   Updated: 2025/03/28 11:59:00 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int Span::shortestSpan() const {
         throw std::logic_error("Needed at least 2 arguments.");
 
     std::vector<int> tmp = _nums;
-
     std::sort(tmp.begin(), tmp.end());
     int minSpan = tmp[1] - tmp[0];
     for(unsigned int i = 1; i < tmp.size() - 1; i++) {

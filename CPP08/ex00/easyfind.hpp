@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*   By: vlomakin <vlomakin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 16:48:37 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/03/27 21:45:46 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/03/28 11:45:43 by vlomakin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
