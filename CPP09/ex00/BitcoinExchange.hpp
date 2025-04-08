@@ -8,7 +8,9 @@
 #include <map>
 #include <fstream>
 #include <string>
-#include <cctype> 
+#include <cctype>
+#include <stdexcept>
+#include <sstream>
 
 class BitсoinExchange {
     private:
@@ -21,10 +23,11 @@ class BitсoinExchange {
         BitсoinExchange& operator=(BitсoinExchange &other);
         BitсoinExchange(BitсoinExchange &other);
 
-        bool loadExchangeData(char *filename);
+        bool loadExchangeData(std::string filename);
         bool loadInputData(char *filename);
         void convertData();
         std::string trim(const std::string& str);
+        void parseLine(const std::string line);
 
 };
 #endif
