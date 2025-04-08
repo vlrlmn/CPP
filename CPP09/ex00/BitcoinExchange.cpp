@@ -62,6 +62,7 @@ void BitсoinExchange::parseLine(const std::string line) { //2011-01-03 | 3
     }
 
     this->inputMap.insert(std::make_pair(date, value));
+    std::cout << "MAP: " << std::endl;
     printMultimap(this->inputMap);
 }
 
