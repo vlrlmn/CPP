@@ -89,6 +89,7 @@
 		"*.tpp": "cpp",
 		"forward_list": "cpp",
 		"list": "cpp",
-		"__functional_03": "cpp"
+		"__functional_03": "cpp",
+		"map": "cpp"
 	}
 }
