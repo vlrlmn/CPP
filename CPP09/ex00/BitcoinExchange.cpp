@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/08 21:08:22 by lomakinaval       #+#    #+#             */
+/*   Updated: 2025/04/08 22:05:22 by lomakinaval      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "BitcoinExchange.hpp"
 
 /*Orthodox canonical form*/
@@ -20,23 +32,19 @@ void printMultimap(const std::multimap<std::string, double>& m) {
 }
 
 /*Data processing*/
-std::string BitсoinExchange::trim(const std::string& str) {
-    size_t start = 0;
-    while (start < str.length() && std::isspace(str[start]))
-        ++start;
+// std::string BitсoinExchange::trim(const std::string& str) {
+//     size_t start = 0;
+//     while (start < str.length() && std::isspace(str[start]))
+//         ++start;
 
-    size_t end = str.length();
-    while (end > start && std::isspace(str[end - 1]))
-        --end;
+//     size_t end = str.length();
+//     while (end > start && std::isspace(str[end - 1]))
+//         --end;
 
-    return str.substr(start, end - start);
-}
+//     return str.substr(start, end - start);
+// }
 
-bool BitсoinExchange::loadExchangeData(std::string ) {
-    return true;
-}
-
-void BitсoinExchange::parseLine(const std::string line) { //2011-01-03 | 3
+void BitсoinExchange::parseLine(const std::string& line) { //2011-01-03 | 3
     size_t sep = line.find('|');
     if (sep == std::string::npos || sep == 0 || sep == line.size() - 1 ||
         line[sep - 1] != ' ' || line[sep + 1] != ' ') {
@@ -66,23 +74,32 @@ void BitсoinExchange::parseLine(const std::string line) { //2011-01-03 | 3
     printMultimap(this->inputMap);
 }
 
-bool BitсoinExchange::loadInputData(char *filename) {
+bool BitсoinExchange::loadInputData(const std::string& filename) {
+    return loadData(filename, "date | value", 
+        &BitсoinExchange::parseLine);
+}
+
+void BitсoinExchange::parseExchangeLine(const std::string& line) {
+
+}
+
+bool  BitсoinExchange::loadData(const std::string& filename, const std::string& header,
+    Parser parser)
+{
     std::ifstream in(filename);
-    if (!in.is_open())
-    {
+
+    if (!in.is_open()) {
         std::cerr << "Error: could not open file." << std::endl;
         return false;
     }
-    else if (in.peek() == EOF)
-    {
+    else if (in.peek() == EOF) {
         std::cout << "File empty." << std::endl;
         in.close();
         return false;
     }
-
     std::string line;
     if (std::getline(in, line)) {
-        if (trim(line) != "date | value") {
+        if (line != header) {
             std::cerr << "Invalid header format" << std::endl;
             in.close();
             return false;
@@ -92,15 +109,20 @@ bool BitсoinExchange::loadInputData(char *filename) {
         if (line.empty())
             continue;
         try {
-            parseLine(line);
+            (this->*parser)(line);
         }
         catch (const std::exception &e) {
             std::cerr << e.what() << std::endl;
         }
     }
-
     in.close();
     return true;
+}
+
+bool BitсoinExchange::loadExchangeData(const std::string& filename)
+{
+    return loadData(filename, "date,exchange_rate", 
+        &BitсoinExchange::parseExchangeLine);
 }
 
 void BitсoinExchange::convertData() {
