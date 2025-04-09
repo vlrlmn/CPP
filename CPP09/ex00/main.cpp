@@ -1,52 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/08 21:08:16 by lomakinaval       #+#    #+#             */
+/*   Updated: 2025/04/08 22:02:25 by lomakinaval      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "BitcoinExchange.hpp"
-
-// std::string trim(const std::string& str) {
-//     size_t start = 0;
-//     while (start < str.length() && std::isspace(str[start]))
-//         ++start;
-
-//     size_t end = str.length();
-//     while (end > start && std::isspace(str[end - 1]))
-//         --end;
-
-//     return str.substr(start, end - start);
-// }
-
-// bool validHeaderFormat(std::string line) {
-//     return line == "date | value";
-// }
-
-// bool validFileContent(char *infile) {
-
-//     std::ifstream in(infile);
-//     if (!in.is_open())
-//     {
-//         std::cerr << "Error: could not open file." << std::endl;
-//         return false;
-//     }
-//     else if (in.peek() == EOF)
-//     {
-//         std::cout << "File empty." << std::endl;
-//         in.close();
-//         return false;
-//     }
-
-//     std::string line;
-//     if (std::getline(in, line)) {
-//         if (!validHeaderFormat(line)) {
-//             std::cerr << "Invalid header format" << std::endl;
-//             in.close();
-//             return false;
-//         }
-//     }
-//     std::cout << "kek" << std::endl;
-//     while(std::getline(in, line)) {
-
-//     }
-
-//     in.close();
-//     return true;
-// }
 
 int main(int argc, char **argv) {
 
@@ -59,15 +23,13 @@ int main(int argc, char **argv) {
     }
     
     char *infile = argv[1];
-    // if (!validFileContent(infile)) {
-    //         return -1;
-    //     }
+    std::string fname(argv[1]);
 
     BitсoinExchange btc;
-    if (!btc.loadExchangeData("data.csv"))
+    if (!btc.loadExchangeData("data.csv") )
         return 1;
 
-    if (!btc.loadInputData(infile))
+    if (!btc.loadInputData(fname))
         return 1;
 
     btc.convertData();

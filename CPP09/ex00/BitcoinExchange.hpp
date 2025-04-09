@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/08 21:08:38 by lomakinaval       #+#    #+#             */
+/*   Updated: 2025/04/08 22:01:40 by lomakinaval      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # pragma once
 
 #ifndef BITCOIN_EXCHANGE_HPP
@@ -14,20 +26,29 @@
 
 class BitсoinExchange {
     private:
+        typedef void (BitсoinExchange::*Parser)(const std::string&);
+
         std::multimap<std::string, double> inputMap;
         std::map<std::string, double> exchangeMap;
         std::string name;
+
+        bool loadData(const std::string& filename, const std::string& header,
+            Parser);
+
+        void parseExchangeLine(const std::string& line);
+        void parseLine(const std::string& line);
     public:
         BitсoinExchange();
         ~BitсoinExchange();
         BitсoinExchange& operator=(BitсoinExchange &other);
         BitсoinExchange(BitсoinExchange &other);
 
-        bool loadExchangeData(std::string filename);
-        bool loadInputData(char *filename);
+        bool loadExchangeData(const std::string& filename);
+        bool loadInputData(const std::string& filename);
+        
         void convertData();
         std::string trim(const std::string& str);
-        void parseLine(const std::string line);
+        
 
 };
 #endif
