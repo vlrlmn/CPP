@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 21:08:38 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/04/08 22:01:40 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/04/10 15:28:40 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ class BitсoinExchange {
         std::map<std::string, double> exchangeMap;
         std::string name;
 
-        bool loadData(const std::string& filename, const std::string& header,
-            Parser);
-
+        bool loadData(const std::string& filename, const std::string& header, Parser parser);
+        void convertSingle(const std::string& date, double amount);
         void parseExchangeLine(const std::string& line);
-        void parseLine(const std::string& line);
+        void parseInputLine(const std::string& line);
+        bool validDate(const std::string& date);
     public:
         BitсoinExchange();
         ~BitсoinExchange();
