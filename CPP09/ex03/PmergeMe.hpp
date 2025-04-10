@@ -11,6 +11,8 @@
 
 class PmergeMe {
     private:
+        std::vector<int> _vec;
+        std::deque<int> _deq;
 
     public:
         PmergeMe();
@@ -20,7 +22,7 @@ class PmergeMe {
 
         void sortWithVector(std::vector<int>& vec);
         void sortWithDeque(std::deque<int>& deq);
-
+        void fillContainers(int argc, char **argv);
 };
 
 #endif
