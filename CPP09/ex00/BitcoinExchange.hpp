@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 21:08:38 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/04/10 15:28:40 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/04/10 15:43:14 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,6 @@ class BitсoinExchange {
 
         bool loadExchangeData(const std::string& filename);
         bool loadInputData(const std::string& filename);
-        
-        void convertData();
         std::string trim(const std::string& str);
-        
-
 };
 #endif
