@@ -6,12 +6,35 @@ int main(int argc, char **argv) {
         return 1;
     }
     PmergeMe sort;
-    sort.fillContainers(argc, argv);
-    clock_t start = clock();
-    clock_t end = clock();
-    double timeUsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000000;
+    try {
+        sort.fillContainers(argc, argv);
+    }
+    catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
+    clock_t startVec, endVec;
+    clock_t startDeq, endDeq;
 
+    std::cout << "Before: ";
+    sort.printVec();
+
+    startVec = clock();
     sort.sortVec();
-    sort.sortDeq();
+    endVec = clock();
 
+    startDeq = clock();
+    sort.sortDeq();
+    endDeq = clock();
+
+    std::cout << "After: ";
+    sort.printVec();
+    std::cout << std::fixed << std::setprecision(6);
+    std::cout << "Vector time for " << sort._vec.size() << " elements: " 
+                << double(endVec - startVec) / CLOCKS_PER_SEC << std::endl;
+    
+    std::cout << "List time for " << sort._vec.size() << " elements: "
+                << double(endDeq - startDeq) / CLOCKS_PER_SEC << std::endl;
+    
+    return 0;
 }
