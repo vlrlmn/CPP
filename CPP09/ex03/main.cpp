@@ -11,4 +11,7 @@ int main(int argc, char **argv) {
     clock_t end = clock();
     double timeUsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000000;
 
+    sort.sortVec();
+    sort.sortDeq();
+
 }

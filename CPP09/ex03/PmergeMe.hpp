@@ -20,8 +20,8 @@ class PmergeMe {
         PmergeMe(PmergeMe &other);
         PmergeMe &operator=(PmergeMe &other);
 
-        void sortWithVector(std::vector<int>& vec);
-        void sortWithDeque(std::deque<int>& deq);
+        void sortVec();
+        void sortDeq();
         void fillContainers(int argc, char **argv);
 };
 
