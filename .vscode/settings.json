@@ -90,6 +90,7 @@
 		"forward_list": "cpp",
 		"list": "cpp",
 		"__functional_03": "cpp",
-		"map": "cpp"
+		"map": "cpp",
+		"__tree": "cpp"
 	}
 }
