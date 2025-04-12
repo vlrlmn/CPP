@@ -6,7 +6,7 @@
 #    By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 15:53:59 by vlomakin          #+#    #+#              #
-#    Updated: 2025/04/10 15:32:25 by lomakinaval      ###   ########.fr        #
+#    Updated: 2025/04/12 12:31:13 by lomakinaval      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC = 	main.cpp \
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g -O0
 
 OBJ = $(SRC:.cpp=.o)
 

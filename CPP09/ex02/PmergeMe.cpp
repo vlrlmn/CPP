@@ -2,8 +2,14 @@
 
 PmergeMe::PmergeMe() {}
 PmergeMe::~PmergeMe() {}
-PmergeMe::PmergeMe(PmergeMe &other) {}
-PmergeMe &PmergeMe::operator=(PmergeMe &other) {}
+PmergeMe::PmergeMe(PmergeMe &other) {
+    (void)other;
+}
+PmergeMe &PmergeMe::operator=(PmergeMe &other) {
+    if (this != &other) {
+    }
+    return *this;
+}
 
 void PmergeMe::printDeq() {
 
@@ -25,7 +31,7 @@ int PmergeMe::safeAtoi(const std::string& str) {
     int num;
     char leftover;
     if(!(iss >> num) || (iss >> leftover)) {
-        throw std::invalid_argument("Invalid input: " + str);
+        throw std::invalid_argument("Invalid input ");
     }
     return num;
 }

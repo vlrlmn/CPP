@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 18:08:07 by lomakinaval       #+#    #+#             */
+/*   Updated: 2025/04/11 18:08:10 by lomakinaval      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PmergeMe.hpp"
 
 int main(int argc, char **argv) {
@@ -29,11 +41,11 @@ int main(int argc, char **argv) {
 
     std::cout << "After: ";
     sort.printVec();
-    std::cout << std::fixed << std::setprecision(6);
-    std::cout << "Vector time for " << sort._vec.size() << " elements: " 
+    std::cout << std::fixed << std::setprecision(5);
+    std::cout << "Time to process a range of " << sort._vec.size() << " elements with std::vector : " 
                 << double(endVec - startVec) / CLOCKS_PER_SEC << std::endl;
     
-    std::cout << "List time for " << sort._vec.size() << " elements: "
+    std::cout << "Time to process a range of " << sort._vec.size() << " elements with std::deque : "
                 << double(endDeq - startDeq) / CLOCKS_PER_SEC << std::endl;
     
     return 0;
