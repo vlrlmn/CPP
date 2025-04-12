@@ -134,16 +134,68 @@ void PmergeMe::sortVec() {
         insert(main, pend, odd, left, _vec, is_odd, order);
 }
 
+// void PmergeMe::sortDeq() {
+//     static int order = 1;
+//     int unit_size = _deq.size() / order;
+//     if (unit_size < 2) return;
+
+//     bool is_odd = unit_size % 2 == 1;
+//     std::deque<int>::iterator start = _deq.begin();
+//     std::deque<int>::iterator end = _deq.begin() + ((order * unit_size) - (is_odd * order));
+
+//     for (std::deque<int>::iterator it = start; it < end; it += (order * 2)) {
+//         if (*(it + (order - 1)) > *(it + (order * 2 - 1))) {
+//             for (int i = 0; i < order; i++) {
+//                 std::swap(*(it + i), *(it + i + order));
+//             }
+//         }
+//     }
+
+//     order *= 2;
+//     sortDeq();
+//     order /= 2;
+
+//     std::deque<int> main, pend, left;
+//     int odd = 0;
+
+//     main.push_back(*(start + order - 1));
+//     main.push_back(*(start + order * 2 - 1));
+
+//     for (std::deque<int>::iterator it = start + order * 2; it < end; it += order) {
+//         pend.push_back(*(it + order - 1));
+//         it += order;
+//         if (it < end)
+//             main.push_back(*(it + order - 1));
+//     }
+
+//     if (is_odd)
+//         odd = *(end + order - 1);
+//     left.insert(left.end(), end + (order * is_odd), _deq.end());
+
+//     for (std::deque<int>::iterator it = pend.begin(); it != pend.end(); ++it) {
+//         std::deque<int>::iterator pos = std::upper_bound(main.begin(), main.end(), *it);
+//         main.insert(pos, *it);
+//     }
+//     if (is_odd) {
+//         std::deque<int>::iterator pos = std::upper_bound(main.begin(), main.end(), odd);
+//         main.insert(pos, odd);
+//     }
+//     _deq.clear();
+//     _deq.insert(_deq.end(), main.begin(), main.end());
+//     _deq.insert(_deq.end(), left.begin(), left.end());
+// }
+
 void PmergeMe::sortDeq() {
+    std::vector<int> tempVec(_deq.begin(), _deq.end());
     static int order = 1;
-    int unit_size = _deq.size() / order;
+    int unit_size = tempVec.size() / order;
     if (unit_size < 2) return;
 
     bool is_odd = unit_size % 2 == 1;
-    std::deque<int>::iterator start = _deq.begin();
-    std::deque<int>::iterator end = _deq.begin() + ((order * unit_size) - (is_odd * order));
+    std::vector<int>::iterator start = tempVec.begin();
+    std::vector<int>::iterator end = tempVec.begin() + ((order * unit_size) - (is_odd * order));
 
-    for (std::deque<int>::iterator it = start; it < end; it += (order * 2)) {
+    for (std::vector<int>::iterator it = start; it < end; it += (order * 2)) {
         if (*(it + (order - 1)) > *(it + (order * 2 - 1))) {
             for (int i = 0; i < order; i++) {
                 std::swap(*(it + i), *(it + i + order));
@@ -155,13 +207,13 @@ void PmergeMe::sortDeq() {
     sortDeq();
     order /= 2;
 
-    std::deque<int> main, pend, left;
+    std::vector<int> main, pend, left;
     int odd = 0;
 
     main.push_back(*(start + order - 1));
     main.push_back(*(start + order * 2 - 1));
 
-    for (std::deque<int>::iterator it = start + order * 2; it < end; it += order) {
+    for (std::vector<int>::iterator it = start + order * 2; it < end; it += order) {
         pend.push_back(*(it + order - 1));
         it += order;
         if (it < end)
@@ -170,17 +222,20 @@ void PmergeMe::sortDeq() {
 
     if (is_odd)
         odd = *(end + order - 1);
-    left.insert(left.end(), end + (order * is_odd), _deq.end());
+    left.insert(left.end(), end + (order * is_odd), tempVec.end());
 
-    for (std::deque<int>::iterator it = pend.begin(); it != pend.end(); ++it) {
-        std::deque<int>::iterator pos = std::upper_bound(main.begin(), main.end(), *it);
+    for (std::vector<int>::iterator it = pend.begin(); it != pend.end(); ++it) {
+        std::vector<int>::iterator pos = std::upper_bound(main.begin(), main.end(), *it);
         main.insert(pos, *it);
     }
     if (is_odd) {
-        std::deque<int>::iterator pos = std::upper_bound(main.begin(), main.end(), odd);
+        std::vector<int>::iterator pos = std::upper_bound(main.begin(), main.end(), odd);
         main.insert(pos, odd);
     }
-    _deq.clear();
-    _deq.insert(_deq.end(), main.begin(), main.end());
-    _deq.insert(_deq.end(), left.begin(), left.end());
+
+    tempVec.clear();
+    tempVec.insert(tempVec.end(), main.begin(), main.end());
+    tempVec.insert(tempVec.end(), left.begin(), left.end());
+
+    _deq.assign(tempVec.begin(), tempVec.end());
 }
