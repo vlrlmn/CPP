@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/14 12:08:17 by lomakinaval       #+#    #+#             */
+/*   Updated: 2025/04/14 12:19:44 by lomakinaval      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # pragma once
 
 #ifndef PMERGE_ME_HPP
@@ -12,6 +24,7 @@
 #include <sys/time.h>
 #include <iomanip>
 #include <sstream>
+#include <set>
 
 class PmergeMe {
     private:
