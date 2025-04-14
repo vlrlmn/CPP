@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:08:07 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/04/14 13:01:18 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/04/14 13:36:11 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ int main(int argc, char **argv) {
     sort.sortDeq(sort._deq);
     endDeq = clock();
 
+    std::cout << std::endl;
     std::cout << "After: ";
     sort.printVec();
+    std::cout << std::endl;
     std::cout << std::fixed << std::setprecision(5);
     std::cout << "Time to process a range of " << sort._vec.size() << " elements with std::vector : " 
                 << double(endVec - startVec) / CLOCKS_PER_SEC << std::endl;
