@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 21:08:16 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/04/10 15:24:27 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/04/14 15:26:57 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
     if (!btc.loadInputData(fname))
         return 1;
 
-    btc.convertData();
+    // btc.convertData();
 
     return 0;
 }
