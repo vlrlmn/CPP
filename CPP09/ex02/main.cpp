@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:08:07 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/04/14 12:09:50 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/04/14 13:01:18 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
     endVec = clock();
 
     startDeq = clock();
-    sort.sortDeq();
+    sort.sortDeq(sort._deq);
     endDeq = clock();
 
     std::cout << "After: ";

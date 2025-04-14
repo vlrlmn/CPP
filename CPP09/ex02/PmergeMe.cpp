@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/14 13:19:51 by lomakinaval       #+#    #+#             */
+/*   Updated: 2025/04/14 13:31:09 by lomakinaval      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PmergeMe.hpp"
 
 PmergeMe::PmergeMe() {}
@@ -48,10 +60,6 @@ void PmergeMe::fillContainers(int argc, char **argv) {
         int num = safeAtoi(argv[i]);
         if (num < 0)
             throw(std::invalid_argument("Not a number: " + std::string(argv[i])));
-            if (!seen.insert(num).second) {
-                std::cerr << "Notice: duplicate value '" << argv[i] << "' ignored." << std::endl;
-                continue;
-            }
         _vec.push_back(num);
         _deq.push_back(num);
     }
@@ -61,141 +69,92 @@ int PmergeMe::Jacobsthal(int k) {
     return static_cast<int>(round((pow(2, k + 1) + pow(-1, k)) / 3));
 }
 
-
-void PmergeMe::insert(std::vector<int>& main, std::vector<int>& pend, int odd, std::vector<int>& left, std::vector<int>& vec, bool is_odd, int order) {
-    std::vector<int>::iterator end;
-    if (pend.size() == 1) {
-        end = std::upper_bound(main.begin(), main.end(), *pend.begin());
-        main.insert(end, *pend.begin());
-    } else if (pend.size() > 1) {
-        size_t jc = 3, count = 0, idx, decrease;
-        while (!pend.empty()) {
-            idx = Jacobsthal(jc) - Jacobsthal(jc - 1);
-            if (idx > pend.size()) idx = pend.size();
-            decrease = 0;
-            while (idx) {
-                end = main.begin();
-                if (Jacobsthal(jc + count) - decrease <= main.size())
-                    end = main.begin() + Jacobsthal(jc + count) - decrease;
-                else
-                    end = main.end();
-                end = std::upper_bound(main.begin(), end, *(pend.begin() + idx - 1));
-                main.insert(end, *(pend.begin() + idx - 1));
-                pend.erase(pend.begin() + idx - 1);
-                idx--;
-                decrease++;
-                count++;
-            }
-            jc++;
-        }
-    }
-
-    std::vector<int> result;
-    if (is_odd) {
-        end = std::upper_bound(main.begin(), main.end(), odd);
-        main.insert(end, odd);
-    }
-    for (std::vector<int>::iterator i = main.begin(); i != main.end(); ++i) {
-        std::vector<int>::iterator it = std::find(vec.begin(), vec.end(), *i);
-        result.insert(result.end(), it - (order - 1), it + 1);
-    }
-    result.insert(result.end(), left.begin(), left.end());
-    vec = result;
-}
-
 void PmergeMe::sortVec() {
-    static int order = 1;
-    int unit_size = _vec.size() / order;
-    if (unit_size < 2) return;
+    if (_vec.size() <= 1)
+        return;
 
-    bool is_odd = unit_size % 2 == 1;
-    std::vector<int>::iterator start = _vec.begin();
-    std::vector<int>::iterator end = _vec.begin() + ((order * unit_size) - (is_odd * order));
+    std::vector<std::pair<int, int> > pairs;
+    std::vector<int> pend;
+    std::vector<int> sorted;
 
-    for (std::vector<int>::iterator it = start; it < end; it += (order * 2)) {
-        if (*(it + (order - 1)) > *(it + (order * 2 - 1))) {
-            for (int i = 0; i < order; i++) {
-                std::swap(*(it + i), *(it + i + order));
-            }
+    for (size_t i = 0; i + 1 < _vec.size(); i += 2) {
+        int a = _vec[i];
+        int b = _vec[i + 1];
+        if (a < b)
+            pairs.push_back(std::make_pair(b, a));
+        else
+            pairs.push_back(std::make_pair(a, b));
+    }
+
+    int last = -1;
+    bool hasOdd = (_vec.size() % 2 == 1);
+    if (hasOdd)
+        last = _vec.back();
+
+    std::sort(pairs.begin(), pairs.end());
+
+    for (size_t i = 0; i < pairs.size(); ++i)
+        sorted.push_back(pairs[i].first);
+
+    for (size_t i = 0; i < pairs.size(); ++i)
+        pend.push_back(pairs[i].second);
+
+    size_t jc = 3;
+    while (!pend.empty()) {
+        int batch = Jacobsthal(jc) - Jacobsthal(jc - 1);
+        if ((size_t)batch > pend.size()) batch = pend.size();
+        for (int i = batch - 1; i >= 0; --i) {
+            std::vector<int>::iterator pos = std::lower_bound(sorted.begin(), sorted.end(), pend[i]);
+            sorted.insert(pos, pend[i]);
+            pend.erase(pend.begin() + i);
         }
+        jc++;
     }
 
-    order *= 2;
-    sortVec();
-    order /= 2;
-
-    std::vector<int> main, pend, left;
-    int odd = 0;
-
-    main.push_back(*(start + order - 1));
-    main.push_back(*(start + order * 2 - 1));
-
-    for (std::vector<int>::iterator it = start + order * 2; it < end; it += order) {
-        pend.push_back(*(it + order - 1));
-        it += order;
-        if (it < end)
-            main.push_back(*(it + order - 1));
+    if (hasOdd) {
+        std::vector<int>::iterator pos = std::lower_bound(sorted.begin(), sorted.end(), last);
+        sorted.insert(pos, last);
     }
-
-    if (is_odd)
-        odd = *(end + order - 1);
-    left.insert(left.end(), end + (order * is_odd), _vec.end());
-
-    if (is_odd || !pend.empty())
-        insert(main, pend, odd, left, _vec, is_odd, order);
+    _vec = sorted;
 }
 
-void PmergeMe::sortDeq() {
-    std::vector<int> tempVec(_deq.begin(), _deq.end());
-    static int order = 1;
-    int unit_size = tempVec.size() / order;
-    if (unit_size < 2) return;
+int PmergeMe::getDeqValue(std::deque<int> &_deq, int index)
+{
+    std::deque<int>::iterator it = _deq.begin();
+    std::advance(it, index); 
+    return *it;
+}
 
-    bool is_odd = unit_size % 2 == 1;
-    std::vector<int>::iterator start = tempVec.begin();
-    std::vector<int>::iterator end = tempVec.begin() + ((order * unit_size) - (is_odd * order));
+void PmergeMe::sortDeq(std::deque<int>& _deq) {
 
-    for (std::vector<int>::iterator it = start; it < end; it += (order * 2)) {
-        if (*(it + (order - 1)) > *(it + (order * 2 - 1))) {
-            for (int i = 0; i < order; i++) {
-                std::swap(*(it + i), *(it + i + order));
-            }
+    std::deque<int> sorted;
+    std::deque<int> pending;
+
+    for (long unsigned int i = 0; i < _deq.size(); i++)
+    {
+        if (i % 2 == 1)
+        {
+            int a = getDeqValue(_deq, i);
+            int b = getDeqValue(_deq, i - 1);
+            sorted.push_back(std::max(a, b));
+            pending.push_back(std::min(a, b));
         }
     }
-
-    order *= 2;
-    sortDeq();
-    order /= 2;
-
-    std::vector<int> main, pend, left;
-    int odd = 0;
-
-    main.push_back(*(start + order - 1));
-    main.push_back(*(start + order * 2 - 1));
-
-    for (std::vector<int>::iterator it = start + order * 2; it < end; it += order) {
-        pend.push_back(*(it + order - 1));
-        it += order;
-        if (it < end)
-            main.push_back(*(it + order - 1));
+    if (_deq.size() % 2 == 1)
+    {
+        sorted.push_back(getDeqValue(_deq, _deq.size() - 1));
     }
 
-    if (is_odd)
-        odd = *(end + order - 1);
-    left.insert(left.end(), end + (order * is_odd), tempVec.end());
-
-    for (std::vector<int>::iterator it = pend.begin(); it != pend.end(); ++it) {
-        std::vector<int>::iterator pos = std::upper_bound(main.begin(), main.end(), *it);
-        main.insert(pos, *it);
-    }
-    if (is_odd) {
-        std::vector<int>::iterator pos = std::upper_bound(main.begin(), main.end(), odd);
-        main.insert(pos, odd);
+    if (sorted.size() > 1)
+    {
+        sortDeq(sorted);
     }
 
-    tempVec.clear();
-    tempVec.insert(tempVec.end(), main.begin(), main.end());
-    tempVec.insert(tempVec.end(), left.begin(), left.end());
+    for (std::deque<int>::iterator it_p = pending.begin(); it_p != pending.end(); ++it_p)
+    {
+        std::deque<int>::iterator it = std::lower_bound(sorted.begin(), sorted.end(), *it_p);
+        sorted.insert(it, *it_p);
+    }
 
-    _deq.assign(tempVec.begin(), tempVec.end());
+    _deq = sorted;
 }
