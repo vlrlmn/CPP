@@ -6,7 +6,7 @@
 /*   By: lomakinavaleria <lomakinavaleria@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:22:52 by lomakinaval       #+#    #+#             */
-/*   Updated: 2025/04/10 15:31:30 by lomakinaval      ###   ########.fr       */
+/*   Updated: 2025/04/14 17:59:15 by lomakinaval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,30 @@ std::string BitcoinExchange::trim(const std::string& str) {
     return str.substr(start, end - start);
 }
 
-bool BitcoinExchange::validDate(const std::string& date) {
-    struct tm tm;
-    char* res = strptime(date.c_str(), "%Y-%m-%d", &tm);
-    return res && *res == '\0';
+bool BitcoinExchange::validDate(const std::string& dateStr) {
+    if (dateStr.length() != 10 || dateStr[4] != '-' || dateStr[7] != '-')
+        return false;
+
+    int year, month, day;
+    if (sscanf(dateStr.c_str(), "%d-%d-%d", &year, &month, &day) != 3)
+        return false;
+
+    if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31)
+        return false;
+
+    struct tm tm = {};
+    tm.tm_year = year - 1900;
+    tm.tm_mon  = month - 1;
+    tm.tm_mday = day;
+    tm.tm_hour = 12;
+
+    time_t temp = mktime(&tm);
+    if (temp == -1)
+        return false;
+
+    return tm.tm_year == year - 1900 &&
+           tm.tm_mon  == month - 1 &&
+           tm.tm_mday == day;
 }
 
 void BitcoinExchange::parseExchangeLine(const std::string& line) {
@@ -129,6 +149,11 @@ bool BitcoinExchange::loadInputData(const std::string& filename) {
 }
 
 void BitcoinExchange::convertSingle(const std::string& date, double amount) {
+    if (date > exchangeMap.rbegin()->first) {
+        std::cerr << "Error: no exchange rate after " << exchangeMap.rbegin()->first 
+                << " (requested: " << date << ")" << std::endl;
+        return;
+    }
     std::map<std::string, double>::const_iterator it = exchangeMap.lower_bound(date);
     if (it == exchangeMap.end() || it->first != date) {
         if (it == exchangeMap.begin()) {
