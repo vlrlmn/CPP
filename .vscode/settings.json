@@ -91,6 +91,7 @@
 		"list": "cpp",
 		"__functional_03": "cpp",
 		"map": "cpp",
-		"__tree": "cpp"
+		"__tree": "cpp",
+		"set": "cpp"
 	}
 }
