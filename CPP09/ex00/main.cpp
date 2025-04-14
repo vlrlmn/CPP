@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
     std::string fname(argv[1]);
 
-    BitсoinExchange btc;
+    BitcoinExchange btc;
     if (!btc.loadExchangeData("data.csv") )
         return 1;
 

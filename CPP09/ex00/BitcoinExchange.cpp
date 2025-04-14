@@ -12,14 +12,14 @@
 
 #include "BitcoinExchange.hpp"
 
-BitсoinExchange::BitсoinExchange() {}
-BitсoinExchange::~BitсoinExchange() {}
+BitcoinExchange::BitcoinExchange() {}
+BitcoinExchange::~BitcoinExchange() {}
 
-BitсoinExchange::BitсoinExchange(BitсoinExchange& other) {
+BitcoinExchange::BitcoinExchange(BitcoinExchange& other) {
     *this = other;
 }
 
-BitсoinExchange& BitсoinExchange::operator=(BitсoinExchange& other) {
+BitcoinExchange& BitcoinExchange::operator=(BitcoinExchange& other) {
     if (this != &other) {
         this->inputMap = other.inputMap;
         this->exchangeMap = other.exchangeMap;
@@ -27,7 +27,7 @@ BitсoinExchange& BitсoinExchange::operator=(BitсoinExchange& other) {
     return *this;
 }
 
-std::string BitсoinExchange::trim(const std::string& str) {
+std::string BitcoinExchange::trim(const std::string& str) {
     size_t start = 0;
     while (start < str.length() && std::isspace(static_cast<unsigned char>(str[start])))
         ++start;
@@ -39,13 +39,13 @@ std::string BitсoinExchange::trim(const std::string& str) {
     return str.substr(start, end - start);
 }
 
-bool BitсoinExchange::validDate(const std::string& date) {
+bool BitcoinExchange::validDate(const std::string& date) {
     struct tm tm;
     char* res = strptime(date.c_str(), "%Y-%m-%d", &tm);
     return res && *res == '\0';
 }
 
-void BitсoinExchange::parseExchangeLine(const std::string& line) {
+void BitcoinExchange::parseExchangeLine(const std::string& line) {
     size_t sep = line.find(',');
     if (sep == std::string::npos)
         throw std::invalid_argument("Error: bad input => " + line);
@@ -65,7 +65,7 @@ void BitсoinExchange::parseExchangeLine(const std::string& line) {
     exchangeMap.insert(std::make_pair(date, value));
 }
 
-void BitсoinExchange::parseInputLine(const std::string& rawLine) {
+void BitcoinExchange::parseInputLine(const std::string& rawLine) {
     std::string line = trim(rawLine);
     size_t sep = line.find('|');
     if (sep == std::string::npos || sep == 0 || sep == line.size() - 1 ||
@@ -91,7 +91,7 @@ void BitсoinExchange::parseInputLine(const std::string& rawLine) {
     convertSingle(date, value);
 }
 
-bool BitсoinExchange::loadData(const std::string& filename, const std::string& header, Parser parser) {
+bool BitcoinExchange::loadData(const std::string& filename, const std::string& header, Parser parser) {
     std::ifstream in(filename.c_str());
     if (!in.is_open()) {
         std::cerr << "Error: could not open file " << filename << std::endl;
@@ -120,15 +120,15 @@ bool BitсoinExchange::loadData(const std::string& filename, const std::string& 
     return true;
 }
 
-bool BitсoinExchange::loadExchangeData(const std::string& filename) {
-    return loadData(filename, "date,exchange_rate", &BitсoinExchange::parseExchangeLine);
+bool BitcoinExchange::loadExchangeData(const std::string& filename) {
+    return loadData(filename, "date,exchange_rate", &BitcoinExchange::parseExchangeLine);
 }
 
-bool BitсoinExchange::loadInputData(const std::string& filename) {
-    return loadData(filename, "date | value", &BitсoinExchange::parseInputLine);
+bool BitcoinExchange::loadInputData(const std::string& filename) {
+    return loadData(filename, "date | value", &BitcoinExchange::parseInputLine);
 }
 
-void BitсoinExchange::convertSingle(const std::string& date, double amount) {
+void BitcoinExchange::convertSingle(const std::string& date, double amount) {
     std::map<std::string, double>::const_iterator it = exchangeMap.lower_bound(date);
     if (it == exchangeMap.end() || it->first != date) {
         if (it == exchangeMap.begin()) {

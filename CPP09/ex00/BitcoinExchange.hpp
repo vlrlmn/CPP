@@ -24,9 +24,9 @@
 #include <stdexcept>
 #include <sstream>
 
-class BitсoinExchange {
+class BitcoinExchange {
     private:
-        typedef void (BitсoinExchange::*Parser)(const std::string&);
+        typedef void (BitcoinExchange::*Parser)(const std::string&);
 
         std::multimap<std::string, double> inputMap;
         std::map<std::string, double> exchangeMap;
@@ -38,10 +38,10 @@ class BitсoinExchange {
         void parseInputLine(const std::string& line);
         bool validDate(const std::string& date);
     public:
-        BitсoinExchange();
-        ~BitсoinExchange();
-        BitсoinExchange& operator=(BitсoinExchange &other);
-        BitсoinExchange(BitсoinExchange &other);
+        BitcoinExchange();
+        ~BitcoinExchange();
+        BitcoinExchange& operator=(BitcoinExchange &other);
+        BitcoinExchange(BitcoinExchange &other);
 
         bool loadExchangeData(const std::string& filename);
         bool loadInputData(const std::string& filename);
